@@ -14,8 +14,10 @@ const HeroSection = () => {
       transition={{ duration: 1.5, ease: "easeInOut" }}
     >
       <div className="flex items-center gap-30 -mt-20">
-        <div className="flex flex-col gap-2 w-fit">
-          <h2 className="text-2xl font-extralight">Nirjal Timalsina</h2>
+        <div className="flex flex-col gap-1 w-fit">
+          <h2 className="text-3xl font-extralight tracking-tight">
+            Nirjal Timalsina <span className="text-xs">📍 Nepal</span>
+          </h2>
           <div className="text-7xl font-semibold tracking-tight">
             <motion.p
               initial={{ opacity: 0, x: 100 }}

@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} h-full antialiased bg-[linear-gradient(180deg,#ebe8ff_0%,#f0eeff_50%,#ffffff_100%)]`}
+      className={`${sora.variable} ${inter.variable} h-full antialiased bg-[#fafafa]`}
     >
       <body className="min-h-full flex flex-col ">
         <Header />
