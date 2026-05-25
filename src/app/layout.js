@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter, Sora } from "next/font/google";
 
 import Header from "../component/header/Header";
+import CustomCursor from "../component/CustomCursor";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -22,9 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} h-full antialiased bg-[#fafafa]`}
+      className={`${sora.variable} ${inter.variable} h-full antialiased bg-[#fafafa] selection:bg-black selection:text-white`}
     >
       <body className="min-h-full flex flex-col ">
+        <CustomCursor />
         <Header />
         {children}
       </body>
