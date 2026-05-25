@@ -35,7 +35,7 @@ export default function AboutText() {
   }, []);
 
   return (
-    <h2 ref={textRef} className="w-[80%] mx-auto text-lg">
+    <h2 ref={textRef} className="w-[80%] mx-auto text-center">
       create professional video edits that combine storytelling, cinematic
       visuals, and smooth motion design to deliver engaging content that stands
       out. From color grading and transitions to pacing and sound
