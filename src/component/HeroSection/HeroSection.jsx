@@ -7,13 +7,13 @@ import Button from "../../utils/CustomButtom";
 
 const HeroSection = () => {
   return (
-    <motion.div
-      className={`flex justify-center w-[80%] p-6 mx-auto items-center h-svh ${borderClr}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, ease: "easeInOut" }}
-    >
-      <div className="flex items-center gap-15 -mt-20">
+    <div className={`${borderClr}`}>
+      <motion.div
+        className={`flex justify-center w-[80%] p-6 mx-auto items-center h-svh gap-15 -mt-20`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
         <div className="flex flex-col gap-1 w-fit">
           <h2 className="text-3xl font-extralight tracking-tight">
             Nirjal Timalsina <span className="text-xs">📍 Nepal</span>
@@ -49,8 +49,8 @@ const HeroSection = () => {
             height={300}
           />
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
