@@ -63,7 +63,7 @@ export default function StaggerTestimonials() {
               return (
                 <motion.div
                   key={index}
-                  initial={false}
+                  initial={{ x: 0, rotate: 0, scale: 1, opacity: 1 }}
                   animate={{
                     x,
                     rotate,
