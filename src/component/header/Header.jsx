@@ -11,7 +11,7 @@ export default function Header() {
       <div
         className={`flex justify-between items-center gap-8 py-2 px-10 ${borderClr}`}
       >
-        <div>
+        <div className="bg-white rounded">
           <Link href="/">
             <Image
               src="/Logo.png"
@@ -22,7 +22,7 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="flex gap-8 text-xs text-[#a3a3a3]">
+        <div className="flex gap-8 text-xs text-white">
           {navbarData.map((item, index) => (
             <Link key={index} href={item.link}>
               {item.name}

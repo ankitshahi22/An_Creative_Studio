@@ -14,7 +14,7 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        <div className="flex gap-10 -mt-20">
+        <div className="flex gap-10 -mt-20 text-white">
           <div className="flex flex-col gap-1 w-fit">
             <h2 className="text-3xl font-extralight tracking-tight">
               Nirjal Timalsina <span className="text-xs">📍 Nepal</span>
