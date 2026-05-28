@@ -16,13 +16,11 @@ export default function Home() {
           muted
           loop
           playsInline
+          priority="true"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/video.mp4" type="video/mp4" />
         </video>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-1" />
 
         {/* Content */}
         <div className="relative z-10">

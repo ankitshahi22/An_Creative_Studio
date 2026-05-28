@@ -89,13 +89,13 @@ export default function StaggerTestimonials() {
                     <p className="max-w-[360px] text-xl font-medium leading-tight">
                       {item.text}
                     </p>
-
                     <p
                       className={`absolute bottom-8 italic ${
                         isActive ? "text-white/80" : "text-black/70"
                       }`}
                     >
-                      – {item.name}, {item.role}
+                      – {item.name} <br />{" "}
+                      <span className="text-xs">{item.role}</span>
                     </p>
                   </div>
                 </motion.div>

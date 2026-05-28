@@ -14,8 +14,8 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        <div className="flex gap-10 -mt-20 text-white">
-          <div className="flex flex-col gap-1 w-fit">
+        <div className="flex gap-10 -mt-20 p-4 rounded-2xl text-white bg-black/60 backdrop-blur-md">
+          <div className="flex flex-col gap-1.5 w-fit">
             <h2 className="text-3xl font-extralight tracking-tight">
               Nirjal Timalsina <span className="text-xs">📍 Nepal</span>
             </h2>
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 VIDEO EDITOR
               </motion.p>
             </div>
-            <p className="text-lg font-extralight">
+            <p className="font-extralight text-white/80">
               Making Your Video Look More Cool.
             </p>
             <Button />

@@ -27,23 +27,28 @@ export const borderClr = "border-b border-gray-300";
 
 export const testimonials = [
   {
-    name: "Pete",
-    role: "CEO at COMPANY",
-    text: `I've been searching for a solution like COMPANY for YEARS. So glad I finally found one!`,
+    name: "Sujan Dhakal",
+    role: "Learning Nepal(Youtube)",
+    text: "Instrumental in elevating our visual content.",
   },
   {
-    name: "Marina",
-    role: "CEO at COMPANY",
-    text: `It's so simple and intuitive, we got the team up to speed in 10 minutes.`,
+    name: "Abishek Malla Thakuri",
+    role: "Awesome Nepali Gyan",
+    text: "Professional, creative, and reliable.",
   },
   {
-    name: "Alex",
-    role: "CEO at COMPANY",
-    text: `I've never felt more organized. We work 5x faster with COMPANY.`,
+    name: "Roshan Thapa",
+    role: "Noobie Gamer",
+    text: "Motion graphics are next level.",
   },
   {
-    name: "Dan",
-    role: "CEO at COMPANY",
-    text: `I'm confident my team can't live without COMPANY anymore.`,
+    name: "Supesh Man Shrestha",
+    role: "Hungry Hetauda",
+    text: "Consistently high-quality designs.",
+  },
+  {
+    name: "Suman Adhikari",
+    role: "DSLR & Lens Shop Nepal",
+    text: "Understood our vision perfectly.",
   },
 ];
