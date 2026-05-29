@@ -4,7 +4,7 @@ import Link from "next/link";
 import { borderClr } from "../../store/data";
 import WorkSection from "./WorkSection";
 import { motion } from "framer-motion";
-import { ArrowBendDownRightIcon } from "@phosphor-icons/react";
+import { ArchiveIcon, ArrowBendDownRightIcon } from "@phosphor-icons/react";
 
 export default function Work() {
   return (
@@ -24,10 +24,11 @@ export default function Work() {
             scale: 1.1,
             transition: { duration: 0.2 },
           }}
-          className="flex items-center gap-2 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white"
+          className="flex items-center gap-1 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white font-semibold"
         >
-          More Works
-          <ArrowBendDownRightIcon size={16} />
+          Archive
+          {/* <ArrowBendDownRightIcon size={16} /> */}
+          <ArchiveIcon size={18} />
         </motion.p>
       </Link>
     </motion.div>
