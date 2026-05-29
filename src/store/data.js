@@ -16,6 +16,14 @@ export const navbarData = [
     link: "/about",
   },
   {
+    name: "Pricing",
+    link: "/pricing",
+  },
+  {
+    name: "Services",
+    link: "/services",
+  },
+  {
     name: "Contact",
     link: "/contact",
   },
@@ -125,8 +133,16 @@ export const footerQuickLinks = [
     href: "/about",
   },
   {
+    label: "Work",
+    href: "/work",
+  },
+  {
     label: "Services",
     href: "/services",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
   },
   {
     label: "Contact",
