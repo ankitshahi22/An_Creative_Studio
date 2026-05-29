@@ -3,6 +3,7 @@
 import { borderClr, footerData, footerQuickLinks } from "../../store/data";
 import GetCurrentTime from "../../utils/CurrentTime";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -53,18 +54,17 @@ const Footer = () => {
           </div>
 
           <div className="w-[50%] flex flex-col gap-4 items-center">
-            <h2 className="text-neutral-500 text-sm font-semibold">
-              Quick Links
-            </h2>
+            <h2 className="text-neutral-500 font-bold">Quick Links</h2>
             <div className="flex flex-col gap-2">
               {footerQuickLinks.map((item, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={item.href}
-                  className="text-neutral-500 text-xs font-medium text-center"
+                  className="text-neutral-500 text-sm font-semibold text-center hover:text-[#0EA5E9] transition-colors"
+                  whileHover={{ x: 5 }}
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
