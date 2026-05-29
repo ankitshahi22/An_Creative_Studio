@@ -49,7 +49,7 @@ const TypeWriter = () => {
     return () => clearTimeout(t.current);
   }, [text, del, paused, i]);
 
-  return <div className="text-[#6366F1] font-semibold">{text}</div>;
+  return <div className="text-[#0EA5E9] font-semibold">{text}</div>;
 };
 
 export default TypeWriter;

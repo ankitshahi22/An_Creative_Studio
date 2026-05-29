@@ -1,29 +1,58 @@
 "use client";
 
-import { borderClr } from "../../store/data";
+import {
+  borderClr,
+  chooseUsDataTitle,
+  chooseUsContent,
+} from "../../store/data";
 import { motion } from "framer-motion";
 
-export default function About() {
+const AboutUs = () => {
   return (
-    <div className={`${borderClr} py-12`}>
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2 }}
-        className="flex flex-col justify-center gap-10"
-      >
-        <h2 className="text-4xl font-semibold w-fit text-[#007bff] mx-auto">
-          ABOUT
-        </h2>
-        <p className="mx-auto w-[80%] text-center">
-          create professional video edits that combine storytelling, cinematic
-          visuals, and smooth motion design to deliver engaging content that
-          stands out. From color grading and transitions to pacing and sound
-          synchronization, I focus on creating polished videos that capture
-          attention and leave a lasting impression while bringing each client’s
-          vision to life with creativity and precision.
-        </p>
-      </motion.div>
+    <div className={`${borderClr} p-8`}>
+      <div className="flex flex-col gap-12 w-[80%] mx-auto text-center">
+        <div>
+          <h2 className={`text-4xl mb-4 text-[#007bff] font-bold`}>
+            {chooseUsDataTitle[0].title}
+          </h2>
+          <p className="text-[#374151]">{chooseUsDataTitle[0].description}</p>
+        </div>
+        <motion.div
+          className="flex gap-3"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="border rounded-2xl p-4 text-left"
+          >
+            <span>{chooseUsContent[0].icon}</span>
+            <h3 className="text-sm">{chooseUsContent[0].label}</h3>
+            <p className="font-semibold text-sm">{chooseUsContent[0].title}</p>
+            <p className="text-xs">{chooseUsContent[0].description}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 gap-3">
+            {chooseUsContent.slice(1).map((item, index) => (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                key={index}
+                className="flex flex-col gap-1 border rounded-2xl p-4 text-left"
+              >
+                <span>{item.icon}</span>
+                <h3 className="text-sm">{item.label}</h3>
+                <p className="font-semibold text-sm">{item.title}</p>
+                <p className="text-xs">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>{" "}
     </div>
   );
-}
+};
+
+export default AboutUs;
