@@ -4,52 +4,38 @@ import Image from "next/image";
 import { borderClr } from "../../store/data";
 import { motion } from "framer-motion";
 import Button from "../../utils/CustomButtom";
+import TypeWriter from "./TypeWriter";
 
 const HeroSection = () => {
   return (
     <div className={`${borderClr}`}>
       <motion.div
-        className={`flex justify-center w-[80%] p-6 mx-auto items-center h-svh gap-15`}
+        className={`flex flex-col justify-center w-[80%] p-6 mx-auto items-center gap-4 min-h-screen text-[#374151] -mt-16`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        <div className="flex gap-10 -mt-20 p-4 rounded-2xl text-white bg-black/60 backdrop-blur-md">
-          <div className="flex flex-col gap-1.5 w-fit">
-            <h2 className="text-3xl font-extralight tracking-tight">
-              Nirjal Timalsina <span className="text-xs">📍 Nepal</span>
-            </h2>
-            <div className="text-7xl font-semibold tracking-tight">
-              <motion.p
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                PROFESSIONAL
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="-mt-3"
-              >
-                VIDEO EDITOR
-              </motion.p>
-            </div>
-            <p className="font-extralight text-white/80">
-              Making Your Video Look More Cool.
-            </p>
-            <Button />
-          </div>
-          <div>
-            <Image
-              src="/HeroSectionImg.png"
-              alt="hero"
-              loading="eager"
-              width={300}
-              height={300}
-            />
-          </div>
+        <h1 className="text-7xl font-bold bg-linear-to-r from-[#eeaeca] to-[#94bbe9] bg-clip-text text-transparent">
+          FOUNDATIONS
+        </h1>
+        <div className="flex items-center gap-2 text-2xl">
+          <p className="font-semibold">Creating</p>
+
+          <TypeWriter />
+        </div>
+        <p className="flex font-semibold uppercase">
+          Graphic Design • Video Editing • Motion Graphics
+        </p>
+        <p className="text-center text-sm">
+          With 8+ Years of Experience & 100+ creators worldwide trusting us, we
+          bring you the best work you won’t find anywhere else in Nepal.
+        </p>
+        <div className="mt-4 flex items-center gap-5 text-sm">
+          <Button label="LET'S TALK" />
+          <Button
+            label="EXPLORE WORK"
+            className="bg-linear-to-r from-[#F72585] to-[#4361EE]"
+          />
         </div>
       </motion.div>
     </div>

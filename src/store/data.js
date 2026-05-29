@@ -1,6 +1,10 @@
 import Facebook from "../component/icons/Facebook";
 import LinkedIn from "../component/icons/LinkedIn";
 import Youtube from "../component/icons/Youtube";
+import Users from "../component/icons/Users";
+import RocketIcon from "../component/icons/RocketIcon";
+import ChartLine from "../component/icons/ChartLine";
+import { Award, Heart } from "lucide-react";
 
 export const navbarData = [
   {
@@ -50,5 +54,48 @@ export const testimonials = [
     name: "Suman Adhikari",
     role: "DSLR & Lens Shop Nepal",
     text: "Understood our vision perfectly.",
+  },
+];
+
+export const chooseUsDataTitle = [
+  {
+    title: "Why Choose Us",
+    description:
+      "We build bold, fresh designs and videos that command attention. Every pixel. Every frame. Sharp and intentional. 2M+ Views Views Generated High performance analytics generating global brand conversions.",
+  },
+];
+
+export const chooseUsContent = [
+  {
+    label: "2M+ Views",
+    title: "Views Generated",
+    description:
+      "High performance analytics generating global brand conversions.",
+    icon: <ChartLine />,
+  },
+  {
+    label: "8+ Years",
+    title: "Experience Portfolio",
+    description:
+      "Comprehensive tenure delivering flawless agency quality projects.",
+    icon: <Award />,
+  },
+  {
+    label: "98% Client Satisfaction",
+    title: "Client Satisfaction",
+    description: "Exceptional feedback criteria from all partners.",
+    icon: <Heart />,
+  },
+  {
+    label: "100+ Creators",
+    title: "Creators Worldwide",
+    description: "Unifying visual identity assets globally.",
+    icon: <Users />,
+  },
+  {
+    label: "500K+ Subscriber",
+    title: "Subscriber Collabs",
+    description: "Strategic partnership with top tier channels.",
+    icon: <RocketIcon />,
   },
 ];

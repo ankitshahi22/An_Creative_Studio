@@ -9,31 +9,12 @@ import Contact from "../component/contact/Contact";
 export default function Home() {
   return (
     <>
-      <div className="relative h-screen overflow-hidden">
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          priority="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
-
-        {/* Content */}
-        <div className="relative z-10">
-          <Header />
-          <HeroSection />
-        </div>
-      </div>
-
+      <Header />
+      <HeroSection />
       <main>
         <About />
         <Work />
       </main>
-
       <Testimonial />
       <Contact />
       <Footer />

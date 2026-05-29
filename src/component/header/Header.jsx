@@ -9,20 +9,18 @@ export default function Header() {
   return (
     <>
       <div
-        className={`flex justify-between items-center gap-8 py-2 px-10 ${borderClr}`}
+        className={`flex justify-between items-center gap-8 py-2 px-10 sticky top-0 z-50 ${borderClr}`}
       >
-        <div className="bg-white rounded">
-          <Link href="/">
-            <Image
-              src="/Logo.png"
-              alt="Logo"
-              loading="eager"
-              width={30}
-              height={30}
-            />
-          </Link>
-        </div>
-        <div className="flex gap-8 text-xs text-white">
+        <Link href="/">
+          <Image
+            src="/Logo.png"
+            alt="Logo"
+            loading="eager"
+            width={35}
+            height={35}
+          />
+        </Link>
+        <div className="flex gap-8 text-xs">
           {navbarData.map((item, index) => (
             <Link key={index} href={item.link}>
               {item.name}
@@ -44,7 +42,7 @@ export default function Header() {
       <div className="fixed right-0 bottom-0">
         <div className="flex flex-col items-center">
           <p className="text-sm rotate-90 mb-25">ancreativestudio@gmail.com</p>
-          <div className="h-55 w-px bg-[#333]" />
+          <div className="h-55 w-0.5 bg-[#333]" />
         </div>
       </div>
     </>
