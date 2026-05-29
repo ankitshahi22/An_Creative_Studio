@@ -26,15 +26,15 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div>
-            <p className="text-xs text-neutral-500 w-[50%]">
-              AN Creative Studios™ is a creative production studio dedicated to
-              delivering impactful design and video solutions. We combine
-              strategy, creativity, and precision to elevate brands across Nepal
-              and beyond.
-            </p>
-          </div>
-          <div className={`${borderClr}`}></div>
+
+          <p className={`text-xs text-neutral-500 w-[50%]`}>
+            AN Creative Studios™ is a creative production studio dedicated to
+            delivering impactful design and video solutions. We combine
+            strategy, creativity, and precision to elevate brands across Nepal
+            and beyond.
+          </p>
+          <div className={`${borderClr} w-[50%]`}></div>
+
           <div className="flex flex-col gap-3">
             {footerData.map((item, index) => (
               <div
