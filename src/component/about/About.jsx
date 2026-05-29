@@ -10,9 +10,9 @@ import { motion } from "framer-motion";
 const AboutUs = () => {
   return (
     <div className={`${borderClr} p-8`}>
-      <div className="flex flex-col gap-12 w-[80%] mx-auto text-center">
-        <div>
-          <h2 className={`text-4xl mb-4 text-[#007bff] font-bold`}>
+      <div className="flex flex-col gap-10 w-[80%] mx-auto text-center">
+        <div className="p-4">
+          <h2 className={`text-4xl mb-4 text-[#007bff] font-bold uppercase`}>
             {chooseUsDataTitle[0].title}
           </h2>
           <p className="text-[#374151]">{chooseUsDataTitle[0].description}</p>
