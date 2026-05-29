@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { borderClr, navbarData } from "../../store/data";
 import Facebook from "../icons/Facebook";
 import LinkedIn from "../icons/LinkedIn";
 import Youtube from "../icons/Youtube";
+import { MoonIcon, SunIcon } from "@phosphor-icons/react";
+import { useState } from "react";
 
 export default function Header() {
+  const [toggleModeIcon, setToggleModeIcon] = useState(false);
+
   return (
     <>
       <div
@@ -30,12 +36,20 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <div className="flex gap-8 text-xs">
+        <div className="flex items-center gap-8 text-xs">
           {navbarData.map((item, index) => (
             <Link key={index} href={item.link}>
               {item.name}
             </Link>
           ))}
+          <div className="border-l border-neutral-300 pl-4">
+            <button
+              className="flex items-center justify-center"
+              onClick={() => setToggleModeIcon(!toggleModeIcon)}
+            >
+              {toggleModeIcon ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+            </button>
+          </div>
         </div>
       </div>
 

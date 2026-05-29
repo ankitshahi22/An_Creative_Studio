@@ -125,10 +125,6 @@ export const footerData = [
 
 export const footerQuickLinks = [
   {
-    label: "Home",
-    href: "/",
-  },
-  {
     label: "About",
     href: "/about",
   },
