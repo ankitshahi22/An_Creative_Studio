@@ -42,7 +42,7 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <div className="border-l border-neutral-300 pl-4">
+          <div className="border-l border-r border-neutral-300 pl-4 pr-4">
             <button
               className="flex items-center justify-center"
               onClick={() => setToggleModeIcon(!toggleModeIcon)}

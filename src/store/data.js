@@ -8,20 +8,20 @@ import { Award, Clock, Heart, MapPin, Phone } from "lucide-react";
 
 export const navbarData = [
   {
-    name: "Work",
-    link: "/work",
-  },
-  {
     name: "About",
     link: "/about",
   },
   {
-    name: "Pricing",
-    link: "/pricing",
+    name: "Work",
+    link: "/work",
   },
   {
     name: "Services",
     link: "/services",
+  },
+  {
+    name: "Pricing",
+    link: "/pricing",
   },
   {
     name: "Contact",
