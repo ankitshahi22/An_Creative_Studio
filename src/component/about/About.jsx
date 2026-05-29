@@ -18,7 +18,7 @@ const AboutUs = () => {
           <p className="text-[#374151]">{chooseUsDataTitle[0].description}</p>
         </div>
         <motion.div
-          className="flex gap-3"
+          className="flex gap-3 mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
@@ -37,7 +37,7 @@ const AboutUs = () => {
             <p className="text-xs">{chooseUsContent[0].description}</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 mx-auto">
             {chooseUsContent.slice(1).map((item, index) => (
               <motion.div
                 whileHover={{ scale: 1.05 }}

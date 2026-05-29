@@ -36,7 +36,7 @@ const Contact = () => {
         <h2 className="text-4xl font-bold text-[#007bff] text-center">
           GET IN TOUCH
         </h2>
-        <button className="animate-bounce px-4 py-1.5 text-sm bg-blue-500 text-white rounded w-fit mx-auto">
+        <button className="animate-bounce px-3 py-1.5 text-sm bg-blue-500 text-white rounded w-fit mx-auto">
           SEND MESSAGE
         </button>
       </div>
