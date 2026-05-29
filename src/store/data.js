@@ -33,27 +33,27 @@ export const testimonials = [
   {
     name: "Sujan Dhakal",
     role: "Learning Nepal(Youtube)",
-    text: "Instrumental in elevating our visual content.",
+    text: "“Instrumental in elevating our visual content.”",
   },
   {
     name: "Abishek Malla Thakuri",
     role: "Awesome Nepali Gyan",
-    text: "Professional, creative, and reliable.",
+    text: "“Professional, creative, and reliable.”",
   },
   {
     name: "Roshan Thapa",
     role: "Noobie Gamer",
-    text: "Motion graphics are next level.",
+    text: "“Motion graphics are next level.”",
   },
   {
     name: "Supesh Man Shrestha",
     role: "Hungry Hetauda",
-    text: "Consistently high-quality designs.",
+    text: "“Consistently high-quality designs.”",
   },
   {
     name: "Suman Adhikari",
     role: "DSLR & Lens Shop Nepal",
-    text: "Understood our vision perfectly.",
+    text: "“Understood our vision perfectly.”",
   },
 ];
 
