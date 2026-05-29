@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <>
       <div
-        className={`flex justify-between items-center gap-8 py-2 px-10 sticky top-0 z-50 ${borderClr}`}
+        className={`flex justify-between items-center gap-8 py-2 px-10 bg-white/95 sticky top-0 z-50 ${borderClr}`}
       >
         <div className="flex items-center gap-1">
           <Link href="/">
