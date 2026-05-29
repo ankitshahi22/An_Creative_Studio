@@ -4,7 +4,7 @@ import Youtube from "../component/icons/Youtube";
 import Users from "../component/icons/Users";
 import RocketIcon from "../component/icons/RocketIcon";
 import ChartLine from "../component/icons/ChartLine";
-import { Award, Heart } from "lucide-react";
+import { Award, Clock, Heart, MapPin, Phone } from "lucide-react";
 
 export const navbarData = [
   {
@@ -97,5 +97,20 @@ export const chooseUsContent = [
     title: "Subscriber Collabs",
     description: "Strategic partnership with top tier channels.",
     icon: <RocketIcon />,
+  },
+];
+
+export const footerData = [
+  {
+    icon: <Phone />,
+    text: "+977 9845839985",
+  },
+  {
+    icon: <MapPin />,
+    text: "Hetauda, 📍Nepal",
+  },
+  {
+    icon: <Clock />,
+    text: "Sun – Fri | 9:00 AM – 5:00 PM",
   },
 ];
