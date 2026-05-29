@@ -114,3 +114,22 @@ export const footerData = [
     text: "Sun – Fri | 9:00 AM – 5:00 PM",
   },
 ];
+
+export const footerQuickLinks = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
