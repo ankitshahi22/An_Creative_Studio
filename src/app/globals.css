@@ -3,3 +3,54 @@
 * {
   cursor: none;
 }
+
+@keyframes ai-border-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ai-card-border {
+  position: relative;
+  padding: 4px; /* 🔥 THICK BORDER */
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* BIG STRONG GRADIENT BORDER */
+.ai-card-border::before {
+  content: "";
+  position: absolute;
+  inset: -80%;
+  background: conic-gradient(
+    #22d3ee,
+    #a855f7,
+    #ec4899,
+    #f59e0b,
+    #22c55e,
+    #22d3ee
+  );
+
+  animation: ai-border-spin 4s linear infinite;
+
+  filter: blur(18px); /* 🔥 stronger glow */
+  opacity: 1;
+}
+
+/* inner mask */
+.ai-card-border::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #0a0a0a;
+  border-radius: 20px;
+}
+
+/* keep content above */
+.ai-card-border > * {
+  position: relative;
+  z-index: 2;
+}

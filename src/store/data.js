@@ -148,3 +148,82 @@ export const footerQuickLinks = [
     href: "/contact",
   },
 ];
+
+export const PLANS = [
+  {
+    name: "Graphic Design",
+    emoji: "🎨",
+    type: "tiered",
+    featured: false,
+    tiers: [
+      {
+        label: "Basic",
+        price: "NPR 1,500",
+        desc: "Flyers, Posters, Social Media Posts. 1-2 Revisions. JPG + PNG",
+      },
+      {
+        label: "Standard",
+        price: "NPR 3,000",
+        desc: "Business Cards, Carousels, Ad Banners. 3 Revisions. Source Files.",
+      },
+      {
+        label: "Pro",
+        price: "NPR 6,000+",
+        desc: "Brand Kit, Logo, Packaging. 5 Revisions. Full Asset Pack.",
+      },
+    ],
+    addons: [
+      { label: "Logo Design", price: "NPR 3,000–5,000" },
+      { label: "Thumbnails", price: "NPR 1,000 each" },
+      { label: "Complete Branding", price: "From NPR 15,000" },
+    ],
+    cta: "Get Started",
+  },
+  {
+    name: "Video Editing",
+    emoji: "🎬",
+    type: "services",
+    featured: true,
+    services: [
+      { label: "TikTok / IG Reels", price: "NPR 2,500+" },
+      { label: "YouTube Shorts", price: "NPR 3,000+" },
+      { label: "YouTube Long-Form", price: "NPR 6,000+" },
+      { label: "Promos / Trailers", price: "NPR 8,000+" },
+      { label: "Cinematic Editing", price: "NPR 12,000+" },
+      { label: "Brand Production", price: "Custom Quote", custom: true },
+    ],
+    retainerNote: "Interested in custom retainer?",
+    cta: "Inquire →",
+  },
+  {
+    name: "Motion Graphics",
+    emoji: "🎥",
+    type: "services",
+    featured: false,
+    services: [
+      { label: "Text Animation", price: "NPR 2,299–6,999" },
+      { label: "Logo Animation", price: "NPR 4,599–12,799" },
+      { label: "Intro / Outro", price: "NPR 6,299–15,399" },
+      { label: "Explainer Animation", price: "NPR 12,799–36,299" },
+    ],
+    addons: [
+      { label: "Extra Revision", price: "NPR 500" },
+      { label: "Source Files", price: "NPR 1,000" },
+      { label: "Express Delivery", price: "+30%" },
+    ],
+    cta: "Get Started",
+  },
+];
+
+export const RETAINERS = [
+  {
+    label: "Design Only",
+    price: "NPR 20,000/mo",
+    sub: "12 Posts / Month",
+  },
+  {
+    label: "Video + Design",
+    price: "NPR 45,000/mo",
+    sub: "8 Videos + 20 Graphics",
+  },
+];
