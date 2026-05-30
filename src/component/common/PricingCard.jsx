@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { PLANS, RETAINERS } from "../../store/data";
+import Link from "next/link";
 
 const TieredCard = ({ plan }) => (
   <div className="flex flex-col gap-5 bg-neutral-900 p-6 h-full rounded-3xl border border-neutral-800">
@@ -41,9 +42,12 @@ const TieredCard = ({ plan }) => (
       ))}
     </div>
 
-    <button className="w-full py-2.5 rounded-xl text-sm font-medium bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700 transition-colors">
+    <Link
+      href="/contact"
+      className="w-full py-2.5 rounded-xl text-sm font-medium bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700 transition-colors text-center"
+    >
       {plan.cta}
-    </button>
+    </Link>
   </div>
 );
 
@@ -98,22 +102,26 @@ const ServicesCard = ({ plan }) => (
     {plan.retainerNote && (
       <div className="border-t border-neutral-800 pt-4 flex items-center justify-between">
         <span className="text-xs text-neutral-500">{plan.retainerNote}</span>
-        <button className="text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+        <Link
+          href="/contact"
+          className="text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+        >
           {plan.cta}
-        </button>
+        </Link>
       </div>
     )}
 
     {!plan.retainerNote && (
-      <button
-        className={`w-full py-2.5 rounded-xl text-sm font-medium transition-colors ${
+      <Link
+        href="/contact"
+        className={`w-full text-center py-2.5 rounded-xl text-sm font-medium transition-colors ${
           plan.featured
             ? "bg-sky-500 hover:bg-sky-400 text-white"
             : "bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700"
         }`}
       >
         {plan.cta}
-      </button>
+      </Link>
     )}
   </div>
 );
