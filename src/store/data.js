@@ -6,6 +6,9 @@ import RocketIcon from "../component/icons/RocketIcon";
 import ChartLine from "../component/icons/ChartLine";
 import { Award, Clock, Heart, MapPin, Phone } from "lucide-react";
 
+export const workClasses =
+  "flex items-center gap-1 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white font-semibold shadow-lg";
+
 export const navbarData = [
   {
     name: "About",
