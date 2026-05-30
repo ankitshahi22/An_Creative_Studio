@@ -21,12 +21,23 @@ const Contact = () => {
     <div className={`${borderClr}`}>
       <div className="min-h-screen flex flex-col items-center justify-center gap-24 w-[80%] mx-auto">
         <div className="w-[80%] mx-auto">
-          <motion.h1 className="text-7xl font-bold uppercase text-gray-800">
+          <motion.h1
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="text-7xl font-bold uppercase text-gray-800"
+          >
             Let&apos;s start a <br />
             <span>project together</span>
           </motion.h1>
         </div>
-        <form className="flex flex-col gap-6 w-[60%]" onSubmit={handleSubmit}>
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col gap-6 w-[60%]"
+          onSubmit={handleSubmit}
+        >
           <Input
             label="Name"
             name="name"
@@ -67,7 +78,7 @@ const Contact = () => {
               {isSubmitting ? "Submitting..." : "Submit"}
             </motion.button>
           </div>
-        </form>
+        </motion.form>
         {result && (
           <div className={`${showPopupClasses} opacity-100 translate-y-0`}>
             <div className="w-2 h-2 bg-[#5aab6e] rounded-full" />

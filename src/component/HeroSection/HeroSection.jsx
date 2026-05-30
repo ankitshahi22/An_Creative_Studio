@@ -5,6 +5,7 @@ import { borderClr } from "../../store/data";
 import { motion } from "framer-motion";
 import Button from "../../utils/CustomButtom";
 import TypeWriter from "./TypeWriter";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -31,11 +32,15 @@ const HeroSection = () => {
           bring you the best work you won’t find anywhere else in Nepal.
         </p>
         <div className="mt-4 flex items-center gap-5 text-sm">
-          <Button label="LET'S TALK" />
-          <Button
-            label="EXPLORE WORK"
-            className="bg-linear-to-r from-[#F72585] to-[#4361EE]"
-          />
+          <Link href="/contact">
+            <Button label="LET'S TALK" />
+          </Link>
+          <Link href="/work">
+            <Button
+              label="EXPLORE WORK"
+              className="bg-linear-to-r from-[#F72585] to-[#4361EE]"
+            />
+          </Link>
         </div>
       </motion.div>
     </div>

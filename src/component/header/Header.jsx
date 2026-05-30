@@ -65,7 +65,7 @@ export default function Header() {
       <div className="fixed right-0 bottom-0">
         <div className="flex flex-col items-center">
           <p className="text-sm rotate-90 mb-25">ancreativestudio@gmail.com</p>
-          <div className="h-55 w-0.5 bg-[#333]" />
+          <div className="h-55 w-px bg-[#333]" />
         </div>
       </div>
     </>
