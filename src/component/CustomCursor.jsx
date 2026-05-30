@@ -23,7 +23,7 @@ export default function Cursor() {
     <Image
       src="/MousePointer.svg"
       alt="Custom Mouse pointer"
-      className="pointer-events-none fixed z-9999 rotate-230"
+      className="pointer-events-none fixed z-9999 rotate-235"
       width={20}
       height={20}
       style={{

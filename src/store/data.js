@@ -6,6 +6,9 @@ import RocketIcon from "../component/icons/RocketIcon";
 import ChartLine from "../component/icons/ChartLine";
 import { Award, Clock, Heart, MapPin, Phone } from "lucide-react";
 
+export const showPopupClasses =
+  "fixed bottom-2 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-3 py-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-black/70 text-[#f0ece4] text-sm shadow-lg transition-all duration-300 w-[60%] sm:w-fit mb-15";
+
 export const workClasses =
   "flex items-center gap-1 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white font-semibold shadow-lg";
 
