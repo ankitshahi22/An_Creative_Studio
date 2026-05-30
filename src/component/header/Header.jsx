@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { borderClr, navbarData } from "../../store/data";
+import { borderClr, linksData } from "../../store/data";
 import Facebook from "../icons/Facebook";
 import LinkedIn from "../icons/LinkedIn";
 import Youtube from "../icons/Youtube";
@@ -38,10 +38,11 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-8 text-xs">
-          {navbarData.map((item, index) => (
+          {linksData.map((item, index) => (
             <Link
               key={index}
               href={item.link}
+              className="transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:text-[#0ea5e9]"
               style={{ color: pathname === item.link ? "#0ea5e9" : undefined }}
             >
               {item.name}

@@ -12,11 +12,7 @@ export const showPopupClasses =
 export const workClasses =
   "flex items-center gap-1 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white font-semibold shadow-lg";
 
-export const navbarData = [
-  {
-    name: "About",
-    link: "/about",
-  },
+export const linksData = [
   {
     name: "Work",
     link: "/work",
@@ -126,29 +122,6 @@ export const footerData = [
   {
     icon: <Clock />,
     text: "Sun – Fri | 9:00 AM – 5:00 PM",
-  },
-];
-
-export const footerQuickLinks = [
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Work",
-    href: "/work",
-  },
-  {
-    label: "Services",
-    href: "/services",
-  },
-  {
-    label: "Pricing",
-    href: "/pricing",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
   },
 ];
 
