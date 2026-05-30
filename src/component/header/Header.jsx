@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { borderClr, navbarData } from "../../store/data";
 import Facebook from "../icons/Facebook";
 import LinkedIn from "../icons/LinkedIn";
@@ -11,6 +12,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [toggleModeIcon, setToggleModeIcon] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -37,7 +39,11 @@ export default function Header() {
 
         <div className="flex items-center gap-8 text-xs">
           {navbarData.map((item, index) => (
-            <Link key={index} href={item.link}>
+            <Link
+              key={index}
+              href={item.link}
+              style={{ color: pathname === item.link ? "#0ea5e9" : undefined }}
+            >
               {item.name}
             </Link>
           ))}
