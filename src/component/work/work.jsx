@@ -16,7 +16,7 @@ export default function Work() {
     >
       <h2 className="text-4xl font-bold mt-10 text-[#007bff]">PROJECTS</h2>
       <WorkSection />
-      <Link href="/">
+      <Link href="/work">
         <motion.p
           whileHover={{
             scale: 1.1,

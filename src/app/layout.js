@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 
 import Header from "../component/header/Header";
 import CustomCursor from "../component/CustomCursor";
+// import Footer from "../component/footer/Footer";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col ">
         <CustomCursor />
+        <Header />
         {children}
+        {/* <Footer /> */}
       </body>
     </html>
   );
