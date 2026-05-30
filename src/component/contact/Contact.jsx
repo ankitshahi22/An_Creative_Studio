@@ -6,30 +6,6 @@ import { useState } from "react";
 import { useFormStatus } from "react-dom";
 
 const Contact = () => {
-  const [result, setResult] = useState("");
-  const { pending } = useFormStatus();
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-    formData.append("access_key", "2f05bd48-6ad6-4b7e-846f-ba6c1831255c");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      setResult("Error");
-    }
-  };
-
   return (
     <div className={`${borderClr}`}>
       <div className="flex flex-col items-center gap-8 p-8 w-[80%] mx-auto">
@@ -46,6 +22,29 @@ const Contact = () => {
 
 export default Contact;
 
+// const [result, setResult] = useState("");
+// const { pending } = useFormStatus();
+
+// const onSubmit = async (event) => {
+//   event.preventDefault();
+
+//   setResult("Sending....");
+//   const formData = new FormData(event.target);
+//   formData.append("access_key", "2f05bd48-6ad6-4b7e-846f-ba6c1831255c");
+
+//   const response = await fetch("https://api.web3forms.com/submit", {
+//     method: "POST",
+//     body: formData,
+//   });
+
+//   const data = await response.json();
+//   if (data.success) {
+//     setResult("Form Submitted Successfully");
+//     event.target.reset();
+//   } else {
+//     setResult("Error");
+//   }
+// };
 {
   /* <div className="p-8 w-[80%] mx-auto">
   <h2 className="text-4xl font-bold text-[#007bff] text-center">CONTACT</h2>
