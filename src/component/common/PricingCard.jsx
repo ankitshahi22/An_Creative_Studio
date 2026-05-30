@@ -5,7 +5,7 @@ import { PLANS, RETAINERS } from "../../store/data";
 import Link from "next/link";
 
 const TieredCard = ({ plan }) => (
-  <div className="flex flex-col gap-5 bg-neutral-900 p-6 h-full rounded-3xl border border-neutral-800">
+  <div className="flex flex-col gap-5 bg-neutral-800 p-6 h-full rounded-3xl border border-neutral-800">
     <div className="flex items-center gap-2">
       <span className="text-2xl">{plan.emoji}</span>
       <h3 className="text-lg font-bold text-neutral-50">{plan.name}</h3>
@@ -53,7 +53,7 @@ const TieredCard = ({ plan }) => (
 
 const ServicesCard = ({ plan }) => (
   <div
-    className={`flex flex-col gap-5 bg-neutral-900 p-6 rounded-3xl h-full ${
+    className={`flex flex-col gap-5 bg-neutral-800 p-6 rounded-3xl h-full ${
       plan.featured ? "border border-transparent" : "border border-neutral-800"
     }`}
   >
@@ -138,7 +138,7 @@ const PricingCard = ({ plan }) => {
 };
 
 const RetainersSection = () => (
-  <div className="w-full max-w-5xl mx-auto bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+  <div className="w-full max-w-5xl mx-auto bg-neutral-700 border border-neutral-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8">
     <div className="flex flex-col gap-3">
       <span className="text-xs uppercase tracking-widest font-semibold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full w-fit">
         📅 Monthly Retainers
