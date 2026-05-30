@@ -152,6 +152,51 @@ export const footerQuickLinks = [
   },
 ];
 
+export const SERVICES = [
+  {
+    name: "Graphic Design",
+    emoji: "🎨",
+    description:
+      "Visuals that clearly communicate your brand identity and hook your audience instantly.",
+    color: "text-green-400",
+    dotColor: "bg-green-400",
+    items: [
+      "Brand Identity & Logo Design",
+      "Print & Digital Marketing Collateral",
+      "Social Media & Web Graphics",
+      "Packaging Design",
+    ],
+  },
+  {
+    name: "Video Editing",
+    emoji: "🎬",
+    description:
+      "Professional storytelling that captivates and converts, tailored for modern formats.",
+    color: "text-orange-400",
+    dotColor: "bg-orange-400",
+    items: [
+      "Corporate & Explainer Videos",
+      "Social Media & Promotional Content",
+      "Event & Highlight Reels",
+      "Color Grading & Sound Design",
+    ],
+  },
+  {
+    name: "Motion Graphics",
+    emoji: "✨",
+    description:
+      "Dynamic animations that elevate your core messaging and bring content to life.",
+    color: "text-purple-400",
+    dotColor: "bg-purple-400",
+    items: [
+      "Animated Logos & Intros",
+      "Explainer & Infographic Videos",
+      "Dynamic Typography",
+      "Branding Integration",
+    ],
+  },
+];
+
 export const PLANS = [
   {
     name: "Graphic Design",
