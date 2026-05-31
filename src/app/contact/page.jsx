@@ -6,14 +6,22 @@ import { motion } from "framer-motion";
 import useForm from "../../component/hooks/useForm";
 
 const Contact = () => {
-  const { values, errors, result, isSubmitting, handleChange, handleBlur, handleSubmit, reset } =
-    useForm();
+  const {
+    values,
+    errors,
+    result,
+    isSubmitting,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    reset,
+  } = useForm();
 
   return (
     <div className="min-h-screen border-b border-[#e8e8e8]">
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-12 md:gap-20">
         <div>
-          <p className="text-[#bbb] text-xs tracking-widest uppercase mb-6">
+          <p className="text-[#888] text-xs tracking-widest uppercase mb-6">
             Get in touch
           </p>
           <motion.h1
@@ -30,7 +38,7 @@ const Contact = () => {
             <p>ancreativestudio@gmail.com</p>
             <p>+977 9845839985</p>
             <p>Hetauda, Nepal</p>
-            <p className="mt-2 text-[#ccc]">Sun – Fri · 9:00 AM – 5:00 PM NPT</p>
+            <p>Sun – Fri · 9:00 AM – 5:00 PM NPT</p>
           </div>
         </div>
 
@@ -39,7 +47,10 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+          <form
+            className="flex flex-col gap-8 text-[#888]"
+            onSubmit={handleSubmit}
+          >
             <Input
               label="Name"
               name="name"
@@ -68,17 +79,17 @@ const Contact = () => {
               error={errors.message}
             />
 
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center justify-end gap-6 pt-2">
               <button
                 type="button"
                 onClick={reset}
-                className="text-sm text-[#ccc] hover:text-[#888] transition-colors"
+                className="text-sm text-[#888] hover:text-[#888] transition-colors"
               >
                 Clear
               </button>
               <motion.button
                 type="submit"
-                className="px-6 py-2.5 bg-[#111] text-white text-sm font-semibold hover:bg-[#333] transition-colors"
+                className="px-4 py-2.5 bg-[#111] text-white text-sm font-semibold hover:bg-[#333] transition-colors rounded-lg"
                 whileTap={{ scale: 0.97 }}
               >
                 {isSubmitting ? "Sending..." : "Send message →"}
@@ -90,7 +101,7 @@ const Contact = () => {
 
       {result && (
         <div className={`${showPopupClasses} opacity-100`}>
-          <div className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full" />
+          <div className="w-1.5 h-1.5 bg-[#5aab6e] rounded-full" />
           {result}
         </div>
       )}

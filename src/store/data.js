@@ -4,7 +4,7 @@ import Youtube from "../component/icons/Youtube";
 import { Clock, MapPin, Phone } from "lucide-react";
 
 export const showPopupClasses =
-  "fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-2 border border-[#e8e8e8] bg-white text-[#111] text-sm shadow-sm w-[90%] sm:w-fit";
+  "fixed bottom-2 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-3 py-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-black/70 text-[#f0ece4] text-sm shadow-lg transition-all duration-300 w-[60%] sm:w-fit mb-15";
 
 export const borderClr = "border-b border-[#2a2a2a]";
 

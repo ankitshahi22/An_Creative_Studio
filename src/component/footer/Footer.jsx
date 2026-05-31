@@ -48,7 +48,7 @@ const Footer = () => {
                 <Link
                   key={item.name}
                   href={item.link}
-                  className="text-sm text-[lab(48.496_0_0)] hover:text-[#111] transition-colors w-fit"
+                  className="text-sm text-[lab(48.496_0_0)] hover:text-[#0EA5E9] transition-colors w-fit "
                 >
                   {item.name}
                 </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
       </div>
 
       <div className="border-[#f0f0f0]">
-        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between text-sm text-[#888]">
+        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between text-xs sm:text-sm text-[#888]">
           <p>2026 © AN Creative Studios™</p>
           <p>
             <GetCurrentTime /> <span>NPT</span>
