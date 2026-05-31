@@ -14,8 +14,8 @@ export default function Header() {
   const close = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="flex justify-between items-center px-5 sm:px-8 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-5xl mx-auto">
+      <div className="flex justify-between items-center px-5 sm:px-8 py-4 sm:bg-transparent sm:mix-blend-exclusion bg-[#f5f4f2]">
         <Link href="/" onClick={close} className="flex items-center gap-2.5">
           <Image
             src="/Logo.png"
