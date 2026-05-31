@@ -2,17 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
-  { id: "01", title: "Brand Identity", category: "Graphic Design", img: "/img1.png" },
-  { id: "02", title: "Video Production", category: "Video Editing", img: "/img2.png" },
-  { id: "03", title: "Motion Graphics", category: "Animation", img: "/img3.png" },
-  { id: "04", title: "Social Content", category: "Design & Editing", img: "/img4.png" },
+  {
+    id: "01",
+    title: "Brand Identity",
+    category: "Graphic Design",
+    img: "/img1.png",
+  },
+  {
+    id: "02",
+    title: "Video Production",
+    category: "Video Editing",
+    img: "/img2.png",
+  },
+  {
+    id: "03",
+    title: "Motion Graphics",
+    category: "Animation",
+    img: "/img3.png",
+  },
+  {
+    id: "04",
+    title: "Social Content",
+    category: "Design & Editing",
+    img: "/img4.png",
+  },
 ];
 
 const Work = () => {
   return (
     <div className="min-h-screen border-b border-[#e8e8e8]">
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-        <p className="text-[#bbb] text-xs tracking-widest uppercase mb-4">Portfolio</p>
+        <p className="text-[#888] text-xs tracking-widest uppercase mb-4">
+          Portfolio
+        </p>
         <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-4">
           Selected Work
         </h1>
@@ -53,7 +75,8 @@ const Work = () => {
         <div className="mt-16 pt-12 border-t border-[#e8e8e8] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="text-[#999] text-sm max-w-md">
             Looking for something specific? We have more work across all three
-            disciplines — get in touch and we&apos;ll share what&apos;s relevant.
+            disciplines — get in touch and we&apos;ll share what&apos;s
+            relevant.
           </p>
           <Link
             href="/contact"

@@ -5,7 +5,7 @@ const Pricing = () => {
     <div className="min-h-svh border-b border-[#e8e8e8]">
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24 flex flex-col gap-12 sm:gap-16">
         <div>
-          <p className="text-[#bbb] text-xs tracking-widest uppercase mb-4">
+          <p className="text-[#888] text-xs tracking-widest uppercase mb-4">
             Pricing & Investment
           </p>
           <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-4">
