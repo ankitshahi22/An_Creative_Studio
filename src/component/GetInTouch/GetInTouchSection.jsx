@@ -39,7 +39,7 @@ const GetInTouchSection = () => {
           </Link>
           <a
             href="mailto:ancreativestudio@gmail.com"
-            className="text-[#bbb] text-sm hover:text-[#111] transition-colors"
+            className="text-[#888] text-sm hover:text-[#111] transition-colors"
           >
             ancreativestudio@gmail.com
           </a>

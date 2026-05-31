@@ -67,8 +67,12 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
       <div>
         <motion.span
           variants={{ initial: { x: 0 }, whileHover: { x: -12 } }}
-          transition={{ type: "spring", staggerChildren: 0.06, delayChildren: 0.2 }}
-          className="relative z-10 block text-xl md:text-3xl font-bold text-[#555] group-hover:text-[#111] transition-colors duration-300 font-[family-name:var(--font-sora)]"
+          transition={{
+            type: "spring",
+            staggerChildren: 0.06,
+            delayChildren: 0.2,
+          }}
+          className="relative z-10 block text-xl md:text-3xl font-bold text-[#555] group-hover:text-[#bbb] transition-colors duration-300 font-[family-name:var(--font-sora)]"
         >
           {heading.split("").map((l, i) => (
             <motion.span
@@ -81,14 +85,17 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
             </motion.span>
           ))}
         </motion.span>
-        <span className="relative z-10 mt-1.5 block text-sm text-[#888] group-hover:text-[#555] transition-colors duration-300">
+        <span className="relative z-10 mt-1.5 block text-sm text-[#555] group-hover:text-[#bbb] transition-colors duration-300">
           {subheading}
         </span>
       </div>
 
       <motion.img
         style={{ top, left, translateX: "-50%", translateY: "-50%" }}
-        variants={{ initial: { scale: 0, opacity: 0 }, whileHover: { scale: 1, opacity: 1 } }}
+        variants={{
+          initial: { scale: 0, opacity: 0 },
+          whileHover: { scale: 1, opacity: 1 },
+        }}
         transition={{ type: "spring" }}
         src={imgSrc}
         className="absolute z-0 h-24 w-36 md:h-44 md:w-64 object-cover"
@@ -96,7 +103,10 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
       />
 
       <motion.span
-        variants={{ initial: { opacity: 0, x: 8 }, whileHover: { opacity: 1, x: 0 } }}
+        variants={{
+          initial: { opacity: 0, x: 8 },
+          whileHover: { opacity: 1, x: 0 },
+        }}
         transition={{ type: "spring" }}
         className="relative z-10 text-[#0EA5E9] text-sm"
       >
