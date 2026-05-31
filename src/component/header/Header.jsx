@@ -63,14 +63,16 @@ export default function Header() {
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden flex items-center gap-2">
-          <button
-            onClick={toggle}
-            className="p-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors text-[#555] dark:text-[#aaa]"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+        <div className="md:hidden flex items-center gap-1">
+          <div className="ml-2 pl-2 pr-2 border-l border-[#e5e5e5]">
+            <button
+              onClick={toggle}
+              className="p-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors text-[#555] dark:text-[#aaa]"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
           <button
             onClick={() => setIsOpen((v) => !v)}
             className="text-[#555] hover:text-[#111] transition-colors p-1"

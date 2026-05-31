@@ -1,7 +1,7 @@
 "use client";
 
 import { useMotionValue, motion, useSpring, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const projects = [
   {
@@ -71,6 +71,11 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
   const mouseYSpring = useSpring(y);
   const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
   const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  }, []);
 
   const handleMouseMove = (e) => {
     const rect = ref.current.getBoundingClientRect();
@@ -82,9 +87,9 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
     <motion.a
       href={href}
       ref={ref}
-      onMouseMove={handleMouseMove}
+      onMouseMove={canHover ? handleMouseMove : undefined}
       initial="initial"
-      whileHover="whileHover"
+      whileHover={canHover ? "whileHover" : undefined}
       className="group relative flex items-center justify-between border-b border-[#e8e8e8] py-6 md:py-8 transition-colors duration-300"
     >
       <div>
