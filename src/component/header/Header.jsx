@@ -46,7 +46,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <div className="ml-2 pl-2 pr-2 border-l border-r border-[#e5e5e5]">
+          <div className="ml-2 pl-2 pr-2 border-l border-r border-[#e5e5e5] dark:border-[#8888]">
             <button
               onClick={toggle}
               className="p-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors text-[#555] dark:text-[#aaa]"
@@ -65,7 +65,7 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-1">
-          <div className="ml-2 pl-2 pr-2 border-l border-[#e5e5e5]">
+          <div className="ml-2 pl-2 pr-2 border-l border-[#e5e5e5] dark:border-[#888]">
             <button
               onClick={toggle}
               className="p-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors text-[#555] dark:text-[#aaa]"

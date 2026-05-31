@@ -46,7 +46,7 @@ export default function StaggerTestimonials() {
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
         <div className="flex items-end justify-between mb-16">
           <div>
-            <p className="text-[#bbb] text-xs tracking-widest uppercase mb-3">
+            <p className="text-[#888] text-xs tracking-widest uppercase mb-3">
               Client words
             </p>
             <h2 className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg)">

@@ -16,7 +16,7 @@ const GetInTouchSection = () => {
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
         <motion.p
           {...scrollFadeUp(0)}
-          className="text-[#bbb] text-xs tracking-widest uppercase mb-6"
+          className="text-[#888] text-xs tracking-widest uppercase mb-6"
         >
           Ready to work together?
         </motion.p>
