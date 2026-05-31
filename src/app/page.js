@@ -3,6 +3,7 @@ import Work from "../component/work/work";
 import Testimonial from "../component/testimonial /testimonial";
 import WhyUsSection from "../component/whyusSection/WhyUsSection";
 import GetInTouchSection from "../component/GetInTouch/GetInTouchSection";
+import ScrollToTop from "../component/ScrollToTop";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </main>
       <Testimonial />
       <GetInTouchSection />
+      <ScrollToTop />
     </>
   );
 }
