@@ -1,33 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { borderClr, workClasses } from "../../store/data";
+import { motion } from "motion/react";
 import WorkSection from "./WorkSection";
-import { motion } from "framer-motion";
-import { ArchiveIcon } from "@phosphor-icons/react";
+
+const scrollFadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
+});
 
 export default function Work() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      className={`${borderClr} text-center`}
-    >
-      <h2 className="text-4xl font-bold mt-10 text-[#007bff]">PROJECTS</h2>
-      <WorkSection />
-      <Link href="/work">
+    <section className="border-b border-[#e8e8e8] overflow-hidden">
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 pt-16 sm:pt-20 pb-4">
         <motion.p
-          whileHover={{
-            scale: 1.1,
-            transition: { duration: 0.2 },
-          }}
-          className={workClasses}
+          {...scrollFadeUp(0)}
+          className="text-[#888] text-xs tracking-widest uppercase mb-3"
         >
-          Archive
-          <ArchiveIcon size={18} />
+          What we do
         </motion.p>
-      </Link>
-    </motion.div>
+        <motion.h2
+          {...scrollFadeUp(0.1)}
+          className="font-[family-name:var(--font-sora)] text-4xl font-bold text-[#111]"
+        >
+          Services
+        </motion.h2>
+      </div>
+
+      <WorkSection />
+
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 pb-16 pt-8">
+        <motion.div {...scrollFadeUp(0)}>
+          <Link
+            href="/work"
+            className="text-sm text-[#555] hover:text-[#0EA5E9] transition-colors"
+          >
+            View past work →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 }

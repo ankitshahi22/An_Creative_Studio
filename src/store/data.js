@@ -1,34 +1,18 @@
 import Facebook from "../component/icons/Facebook";
 import LinkedIn from "../component/icons/LinkedIn";
 import Youtube from "../component/icons/Youtube";
-import Users from "../component/icons/Users";
-import RocketIcon from "../component/icons/RocketIcon";
-import ChartLine from "../component/icons/ChartLine";
-import { Award, Clock, Heart, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 
 export const showPopupClasses =
-  "fixed bottom-2 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-3 py-2 rounded-full border border-[rgba(255,255,255,0.12)] bg-black/70 text-[#f0ece4] text-sm shadow-lg transition-all duration-300 w-[60%] sm:w-fit mb-15";
+  "fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-2 border border-[#e8e8e8] bg-white text-[#111] text-sm shadow-sm w-[90%] sm:w-fit";
 
-export const workClasses =
-  "flex items-center gap-1 w-fit mx-auto border border-gray-500 px-2 py-1 rounded-md mb-10 text-sm hover:bg-black/30 hover:text-white font-semibold shadow-lg";
+export const borderClr = "border-b border-[#2a2a2a]";
 
 export const linksData = [
-  {
-    name: "Work",
-    link: "/work",
-  },
-  {
-    name: "Services",
-    link: "/services",
-  },
-  {
-    name: "Pricing",
-    link: "/pricing",
-  },
-  {
-    name: "Contact",
-    link: "/contact",
-  },
+  { name: "Work", link: "/work" },
+  { name: "Services", link: "/services" },
+  { name: "Pricing", link: "/pricing" },
+  { name: "Contact", link: "/contact" },
 ];
 
 export const navbarIcon = {
@@ -37,102 +21,45 @@ export const navbarIcon = {
   linkedin: <LinkedIn />,
 };
 
-export const borderClr = "border-b border-gray-300";
-
 export const testimonials = [
   {
     name: "Sujan Dhakal",
-    role: "Learning Nepal(Youtube)",
-    text: "“Instrumental in elevating our visual content.”",
+    role: "Learning Nepal — YouTube",
+    text: "Instrumental in elevating our visual content. The quality of work is consistently above what you'd expect.",
   },
   {
     name: "Abishek Malla Thakuri",
     role: "Awesome Nepali Gyan",
-    text: "“Professional, creative, and reliable.”",
+    text: "Professional, creative, and reliable. They understood what we needed and delivered without back-and-forth.",
   },
   {
     name: "Roshan Thapa",
     role: "Noobie Gamer",
-    text: "“Motion graphics are next level.”",
+    text: "The motion graphics work is genuinely next level. Our channel grew significantly after the rebrand.",
   },
   {
     name: "Supesh Man Shrestha",
     role: "Hungry Hetauda",
-    text: "“Consistently high-quality designs.”",
+    text: "Consistently high-quality designs delivered on time. They treat every project like it matters.",
   },
   {
     name: "Suman Adhikari",
     role: "DSLR & Lens Shop Nepal",
-    text: "“Understood our vision perfectly.”",
-  },
-];
-
-export const chooseUsDataTitle = [
-  {
-    title: "Why Choose Us",
-    description:
-      "We build bold, fresh designs and videos that command attention. Every pixel. Every frame. Sharp and intentional. 2M+ Views Views Generated High performance analytics generating global brand conversions.",
-  },
-];
-
-export const chooseUsContent = [
-  {
-    label: "2M+ Views",
-    title: "Views Generated",
-    description:
-      "High performance analytics generating global brand conversions.",
-    icon: <ChartLine />,
-  },
-  {
-    label: "8+ Years",
-    title: "Experience Portfolio",
-    description:
-      "Comprehensive tenure delivering flawless agency quality projects.",
-    icon: <Award />,
-  },
-  {
-    label: "98% Client Satisfaction",
-    title: "Client Satisfaction",
-    description: "Exceptional feedback criteria from all partners.",
-    icon: <Heart />,
-  },
-  {
-    label: "100+ Creators",
-    title: "Creators Worldwide",
-    description: "Unifying visual identity assets globally.",
-    icon: <Users />,
-  },
-  {
-    label: "500K+ Subscriber",
-    title: "Subscriber Collabs",
-    description: "Strategic partnership with top tier channels.",
-    icon: <RocketIcon />,
+    text: "They understood our vision without us having to explain it twice. Rare find.",
   },
 ];
 
 export const footerData = [
-  {
-    icon: <Phone />,
-    text: "+977 9845839985",
-  },
-  {
-    icon: <MapPin />,
-    text: "Hetauda, 📍Nepal",
-  },
-  {
-    icon: <Clock />,
-    text: "Sun – Fri | 9:00 AM – 5:00 PM",
-  },
+  { icon: <Phone size={14} />, text: "+977 9845839985" },
+  { icon: <MapPin size={14} />, text: "Hetauda, Nepal" },
+  { icon: <Clock size={14} />, text: "Sun – Fri · 9:00 AM – 5:00 PM NPT" },
 ];
 
 export const SERVICES = [
   {
     name: "Graphic Design",
-    emoji: "🎨",
     description:
-      "Visuals that clearly communicate your brand identity and hook your audience instantly.",
-    color: "text-green-400",
-    dotColor: "bg-green-400",
+      "Visuals that communicate your brand clearly and stop the scroll.",
     items: [
       "Brand Identity & Logo Design",
       "Print & Digital Marketing Collateral",
@@ -142,11 +69,8 @@ export const SERVICES = [
   },
   {
     name: "Video Editing",
-    emoji: "🎬",
     description:
-      "Professional storytelling that captivates and converts, tailored for modern formats.",
-    color: "text-orange-400",
-    dotColor: "bg-orange-400",
+      "Professional storytelling cut for the format — long-form, short-form, or cinematic.",
     items: [
       "Corporate & Explainer Videos",
       "Social Media & Promotional Content",
@@ -156,11 +80,8 @@ export const SERVICES = [
   },
   {
     name: "Motion Graphics",
-    emoji: "✨",
     description:
-      "Dynamic animations that elevate your core messaging and bring content to life.",
-    color: "text-purple-400",
-    dotColor: "bg-purple-400",
+      "Animation that brings your messaging to life and holds attention.",
     items: [
       "Animated Logos & Intros",
       "Explainer & Infographic Videos",
@@ -173,14 +94,13 @@ export const SERVICES = [
 export const PLANS = [
   {
     name: "Graphic Design",
-    emoji: "🎨",
     type: "tiered",
     featured: false,
     tiers: [
       {
         label: "Basic",
         price: "NPR 1,500",
-        desc: "Flyers, Posters, Social Media Posts. 1-2 Revisions. JPG + PNG",
+        desc: "Flyers, Posters, Social Media Posts. 1–2 Revisions. JPG + PNG.",
       },
       {
         label: "Standard",
@@ -202,7 +122,6 @@ export const PLANS = [
   },
   {
     name: "Video Editing",
-    emoji: "🎬",
     type: "services",
     featured: true,
     services: [
@@ -213,12 +132,11 @@ export const PLANS = [
       { label: "Cinematic Editing", price: "NPR 12,000+" },
       { label: "Brand Production", price: "Custom Quote", custom: true },
     ],
-    retainerNote: "Interested in custom retainer?",
+    retainerNote: "Interested in a custom retainer?",
     cta: "Inquire →",
   },
   {
     name: "Motion Graphics",
-    emoji: "🎥",
     type: "services",
     featured: false,
     services: [

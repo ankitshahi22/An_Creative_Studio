@@ -1,9 +1,8 @@
 import "./globals.css";
 import { Inter, Sora } from "next/font/google";
-
 import Header from "../component/header/Header";
-import CustomCursor from "../component/CustomCursor";
 import Footer from "../component/footer/Footer";
+import SmoothScroll from "../component/SmoothScroll";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -16,21 +15,27 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Nirjal Timalsina",
-  description: "Nirjal Timalsina - Video Editor",
+  title: "AN Creative Studios — Video Editing & Design, Nepal",
+  description:
+    "AN Creative Studios is a creative production studio based in Hetauda, Nepal. Video editing, graphic design, and motion graphics for creators and brands.",
+  openGraph: {
+    title: "AN Creative Studios — Video Editing & Design, Nepal",
+    description:
+      "Creative production studio in Hetauda, Nepal. Video editing, graphic design, and motion graphics.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${sora.variable} ${inter.variable} h-full antialiased bg-[#fafafa] selection:bg-black selection:text-white`}
-    >
-      <body className="min-h-full flex flex-col ">
-        <CustomCursor />
-        <Header />
-        {children}
-        <Footer />
+    <html lang="en" className={`${sora.variable} ${inter.variable} h-full`}>
+      <body className="min-h-full flex flex-col bg-[#f5f4f2] text-[#111] font-(family-name:--font-inter)">
+        <SmoothScroll>
+          <Header />
+          <div className="h-[62px] shrink-0" />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

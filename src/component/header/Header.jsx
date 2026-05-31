@@ -3,78 +3,85 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { borderClr, linksData } from "../../store/data";
-import Facebook from "../icons/Facebook";
-import LinkedIn from "../icons/LinkedIn";
-import Youtube from "../icons/Youtube";
-import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 import { useState } from "react";
+import { Menu, MoveRight, X } from "lucide-react";
+import { linksData } from "../../store/data";
 
 export default function Header() {
-  const [toggleModeIcon, setToggleModeIcon] = useState(false);
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const close = () => setIsOpen(false);
 
   return (
-    <>
-      <div
-        className={`flex justify-between items-center gap-8 py-2 px-10 bg-white/95 sticky top-0 z-50 ${borderClr}`}
-      >
-        <Link href="/" className="flex items-center gap-1">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+      <div className="flex justify-between items-center px-5 sm:px-8 py-4">
+        <Link href="/" onClick={close} className="flex items-center gap-2.5">
           <Image
             src="/Logo.png"
-            alt="Logo"
+            alt="AN Creative Studios"
             loading="eager"
-            width={35}
-            height={35}
+            width={30}
+            height={30}
           />
-          <div>
-            <h2 className="text-neutral-500 text-sm font-semibold">
-              AN Creative Studios™
-            </h2>
-            <p className="text-[#0EA5E9] text-[10px] -mt-1">
-              Elevate Beyond Limits
-            </p>
-          </div>{" "}
+          <span className="text-sm font-semibold text-[#111] font-[family-name:var(--font-sora)] tracking-tight">
+            AN Creative Studios™
+          </span>
         </Link>
 
-        <div className="flex items-center gap-8 text-xs">
-          {linksData.map((item, index) => (
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {linksData.map((item) => (
             <Link
-              key={index}
+              key={item.name}
               href={item.link}
-              className="transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:text-[#0ea5e9]"
-              style={{ color: pathname === item.link ? "#0ea5e9" : undefined }}
+              className="text-sm transition-colors duration-200 hover:underline"
+              style={{ color: pathname === item.link ? "#0EA5E9" : "#888" }}
             >
               {item.name}
             </Link>
           ))}
-          <div className="border-l border-r border-neutral-300 pl-4 pr-4">
-            <button
-              className="flex items-center justify-center"
-              onClick={() => setToggleModeIcon(!toggleModeIcon)}
+        </nav>
+        <Link
+          href="/contact"
+          className="hidden md:flex items-center gap-1 text-sm px-4 py-1.5 font-semibold hover:text-[#0EA5E9] transition-colors uppercase"
+        >
+          Hire us <MoveRight size={18} />
+        </Link>
+
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setIsOpen((v) => !v)}
+          className="md:hidden text-[#555] hover:text-[#111] transition-colors p-1"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {isOpen && (
+        <nav className="md:hidden border-t border-[#e8e8e8] bg-[#fafafa] px-5 py-4 flex flex-col gap-1">
+          {linksData.map((item) => (
+            <Link
+              key={item.name}
+              href={item.link}
+              onClick={close}
+              className="text-sm py-3 border-b border-[#f0f0f0] last:border-b-0 transition-colors hover:text-[#0ea539]"
+              style={{ color: pathname === item.link ? "#0EA5E9" : "#555" }}
             >
-              {toggleModeIcon ? <SunIcon size={16} /> : <MoonIcon size={16} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Social Media Icons */}
-      <div className="fixed left-20 bottom-0">
-        <div className="flex flex-col items-center gap-4">
-          <Facebook />
-          <LinkedIn />
-          <Youtube />
-          <div className="h-70 w-px bg-[#333]" />
-        </div>
-      </div>
-
-      <div className="fixed right-0 bottom-0">
-        <div className="flex flex-col items-center">
-          <p className="text-sm rotate-90 mb-25">ancreativestudio@gmail.com</p>
-          <div className="h-55 w-px bg-[#333]" />
-        </div>
-      </div>
-    </>
+              {item.name}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            onClick={close}
+            className="mt-3 text-center text-sm px-4 py-2.5 bg-[#0EA5E9] text-white font-semibold hover:bg-[#0284c7] transition-colors"
+          >
+            Hire us
+          </Link>
+        </nav>
+      )}
+    </header>
   );
 }

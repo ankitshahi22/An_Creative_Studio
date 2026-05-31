@@ -1,18 +1,19 @@
 import PricingCards from "../../component/common/PricingCard";
-import { borderClr } from "../../store/data";
 
 const Pricing = () => {
   return (
-    <div className={`${borderClr}`}>
-      <div className="min-h-svh px-6 py-24 flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center text-center gap-2">
-          <p className="uppercase text-sm text-[#0ea5e9] tracking-widest">
+    <div className="min-h-svh border-b border-[#e8e8e8]">
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24 flex flex-col gap-12 sm:gap-16">
+        <div>
+          <p className="text-[#bbb] text-xs tracking-widest uppercase mb-4">
             Pricing & Investment
           </p>
-          <h2 className="text-4xl font-bold uppercase">Transparent Packages</h2>
-          <p className="text-sm text-neutral-400 max-w-md">
+          <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-4">
+            Transparent Packages
+          </h1>
+          <p className="text-[#999] text-sm max-w-md">
             All pricing varies depending on scope, complexity, and turnaround
-            timeline.
+            timeline. Custom quotes available on request.
           </p>
         </div>
 

@@ -1,91 +1,99 @@
 "use client";
 
-import { borderClr, showPopupClasses } from "../../store/data";
+import { showPopupClasses } from "../../store/data";
 import Input from "../../utils/Input";
 import { motion } from "framer-motion";
 import useForm from "../../component/hooks/useForm";
 
 const Contact = () => {
-  const {
-    values,
-    errors,
-    result,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    reset,
-  } = useForm();
+  const { values, errors, result, isSubmitting, handleChange, handleBlur, handleSubmit, reset } =
+    useForm();
 
   return (
-    <div className={`${borderClr}`}>
-      <div className="min-h-screen flex flex-col items-center justify-center gap-24 w-[80%] mx-auto">
-        <div className="w-[80%] mx-auto">
+    <div className="min-h-screen border-b border-[#e8e8e8]">
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-12 md:gap-20">
+        <div>
+          <p className="text-[#bbb] text-xs tracking-widest uppercase mb-6">
+            Get in touch
+          </p>
           <motion.h1
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="text-7xl font-bold uppercase text-gray-800"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="font-[family-name:var(--font-sora)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#111] leading-tight mb-8"
           >
-            Let&apos;s start a <br />
-            <span>project together</span>
+            Let&apos;s start a
+            <br />
+            project together.
           </motion.h1>
+          <div className="flex flex-col gap-3 text-sm text-[#999]">
+            <p>ancreativestudio@gmail.com</p>
+            <p>+977 9845839985</p>
+            <p>Hetauda, Nepal</p>
+            <p className="mt-2 text-[#ccc]">Sun – Fri · 9:00 AM – 5:00 PM NPT</p>
+          </div>
         </div>
-        <motion.form
-          initial={{ opacity: 0, y: 30 }}
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="flex flex-col gap-6 w-[60%]"
-          onSubmit={handleSubmit}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Input
-            label="Name"
-            name="name"
-            placeholder="Enter your name"
-            value={values.name}
-            onChange={(e) => handleChange("name", e.target.value)}
-            onBlur={() => handleBlur("name")}
-            error={errors.name}
-          />
-          <Input
-            label="Email"
-            name="email"
-            placeholder="Example@gmail.com"
-            value={values.email}
-            onChange={(e) => handleChange("email", e.target.value)}
-            onBlur={() => handleBlur("email")}
-            error={errors.email}
-          />
-          <Input
-            label="Message"
-            name="message"
-            placeholder="Enter your message"
-            value={values.message}
-            onChange={(e) => handleChange("message", e.target.value)}
-            onBlur={() => handleBlur("message")}
-            error={errors.message}
-          />
-          <div className="flex gap-6 justify-end">
-            <button className="hover:text-blue-500" onClick={reset}>
-              Reset
-            </button>
-            <motion.button
-              type="submit"
-              className="border px-3 py-1 rounded-lg bg-black text-white hover:bg-blue-500 hover:text-white"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </motion.button>
-          </div>
-        </motion.form>
-        {result && (
-          <div className={`${showPopupClasses} opacity-100 translate-y-0`}>
-            <div className="w-2 h-2 bg-[#5aab6e] rounded-full" />
-            {result}
-          </div>
-        )}
+          <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+            <Input
+              label="Name"
+              name="name"
+              placeholder="Your name"
+              value={values.name}
+              onChange={(e) => handleChange("name", e.target.value)}
+              onBlur={() => handleBlur("name")}
+              error={errors.name}
+            />
+            <Input
+              label="Email"
+              name="email"
+              placeholder="your@email.com"
+              value={values.email}
+              onChange={(e) => handleChange("email", e.target.value)}
+              onBlur={() => handleBlur("email")}
+              error={errors.email}
+            />
+            <Input
+              label="Message"
+              name="message"
+              placeholder="Tell us about your project"
+              value={values.message}
+              onChange={(e) => handleChange("message", e.target.value)}
+              onBlur={() => handleBlur("message")}
+              error={errors.message}
+            />
+
+            <div className="flex items-center justify-between pt-2">
+              <button
+                type="button"
+                onClick={reset}
+                className="text-sm text-[#ccc] hover:text-[#888] transition-colors"
+              >
+                Clear
+              </button>
+              <motion.button
+                type="submit"
+                className="px-6 py-2.5 bg-[#111] text-white text-sm font-semibold hover:bg-[#333] transition-colors"
+                whileTap={{ scale: 0.97 }}
+              >
+                {isSubmitting ? "Sending..." : "Send message →"}
+              </motion.button>
+            </div>
+          </form>
+        </motion.div>
       </div>
+
+      {result && (
+        <div className={`${showPopupClasses} opacity-100`}>
+          <div className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full" />
+          {result}
+        </div>
+      )}
     </div>
   );
 };

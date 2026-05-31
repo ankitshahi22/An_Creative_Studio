@@ -3,59 +3,61 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { borderClr } from "../../store/data";
 import { testimonials } from "../../store/data";
 
 export default function StaggerTestimonials() {
   const [active, setActive] = useState(0);
 
-  const nextSlide = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setActive((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
+  const next = () => setActive((p) => (p + 1) % testimonials.length);
+  const prev = () =>
+    setActive((p) => (p === 0 ? testimonials.length - 1 : p - 1));
 
   return (
-    <section className={`${borderClr} p-8`}>
-      <h2 className="text-4xl font-bold text-center text-[#007bff]">
-        TESTIMONIALS
-      </h2>
-      <div className="relative flex min-h-fit items-center justify-center overflow-hidden p-4">
-        <div className="relative h-[350px]">
+    <section className="border-b border-[#e8e8e8] overflow-hidden">
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+        <div className="flex items-end justify-between mb-16">
+          <div>
+            <p className="text-[#bbb] text-xs tracking-widest uppercase mb-3">
+              Client words
+            </p>
+            <h2 className="font-[family-name:var(--font-sora)] text-4xl font-bold text-[#111]">
+              Testimonials
+            </h2>
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prev}
+              className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
+              aria-label="Previous"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              onClick={next}
+              className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
+              aria-label="Next"
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        <div className="relative h-[280px]">
           <AnimatePresence>
             {testimonials.map((item, index) => {
               const position =
                 (index - active + testimonials.length) % testimonials.length;
 
-              let x = 0;
-              let rotate = 0;
-              let scale = 1;
-              let zIndex = 0;
-              let opacity = 1;
+              let x = 0, rotate = 0, scale = 1, zIndex = 0, opacity = 1;
 
               if (position === 0) {
-                x = 0;
-                rotate = 0;
-                scale = 1;
-                zIndex = 10;
+                x = 0; rotate = 0; scale = 1; zIndex = 10;
               } else if (position === 1) {
-                x = 260;
-                rotate = 3;
-                scale = 0.92;
-                zIndex = 1;
+                x = 240; rotate = 2; scale = 0.93; zIndex = 5; opacity = 0.4;
               } else if (position === testimonials.length - 1) {
-                x = -260;
-                rotate = -3;
-                scale = 0.92;
-                zIndex = 1;
+                x = -240; rotate = -2; scale = 0.93; zIndex = 5; opacity = 0.4;
               } else {
-                x = 520;
-                rotate = 6;
-                scale = 0.85;
-                opacity = 0;
-                zIndex = 0;
+                x = 480; rotate = 4; scale = 0.87; opacity = 0; zIndex = 0;
               }
 
               const isActive = position === 0;
@@ -63,55 +65,36 @@ export default function StaggerTestimonials() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ x: 0, rotate: 0, scale: 1, opacity: 1 }}
-                  animate={{
-                    x,
-                    rotate,
-                    scale,
-                    opacity,
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 120,
-                    damping: 18,
-                    mass: 0.8,
-                  }}
+                  animate={{ x, rotate, scale, opacity }}
+                  transition={{ type: "spring", stiffness: 130, damping: 20, mass: 0.8 }}
                   style={{ zIndex }}
-                  className="absolute left-1/2 top-1/2 w-[320px] -translate-x-1/2 -translate-y-1/2 transform-gpu will-change-transform md:w-[500px]"
+                  className="absolute left-1/2 top-0 w-[300px] md:w-[480px] -translate-x-1/2"
                 >
                   <div
-                    className={`min-h-[240px] w-[280px] lg:w-fit mx-auto border-2 border-black p-4 shadow-xl transition-colors duration-500 ${
+                    className={`p-8 border transition-colors duration-300 ${
                       isActive
-                        ? "bg-linear-to-br from-blue-600 to-violet-600 text-white"
-                        : "bg-white text-black"
+                        ? "bg-white border-[#e8e8e8] border-l-[#0EA5E9] border-l-2"
+                        : "bg-[#f5f5f5] border-[#f0f0f0]"
                     }`}
                   >
-                    <p className="max-w-[360px] text-xl font-medium leading-tight">
-                      {item.text}
-                    </p>
                     <p
-                      className={`absolute bottom-8 italic ${
-                        isActive ? "text-white/80" : "text-black/70"
+                      className={`text-lg leading-snug mb-6 font-[family-name:var(--font-sora)] ${
+                        isActive ? "text-[#111]" : "text-[#ccc]"
                       }`}
                     >
-                      – {item.name} <br />{" "}
-                      <span className="text-xs">{item.role}</span>
+                      &ldquo;{item.text}&rdquo;
+                    </p>
+                    <p className={`text-sm font-semibold ${isActive ? "text-[#111]" : "text-[#ccc]"}`}>
+                      {item.name}
+                    </p>
+                    <p className={`text-xs mt-0.5 ${isActive ? "text-[#999]" : "text-[#ccc]"}`}>
+                      {item.role}
                     </p>
                   </div>
                 </motion.div>
               );
             })}
           </AnimatePresence>
-
-          <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 gap-8">
-            <button onClick={prevSlide} className="transition hover:scale-110">
-              <ArrowLeft className="h-8 w-8 text-black" strokeWidth={1.5} />
-            </button>
-
-            <button onClick={nextSlide} className="transition hover:scale-110">
-              <ArrowRight className="h-8 w-8 text-black" strokeWidth={1.5} />
-            </button>
-          </div>
         </div>
       </div>
     </section>
