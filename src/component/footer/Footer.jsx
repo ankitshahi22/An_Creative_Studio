@@ -89,10 +89,18 @@ const Footer = () => {
 
       <div className="border-[#f0f0f0]">
         <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between text-xs sm:text-sm text-[#888]">
-          <p>2026 © AN Creative Studios™</p>
-          <p>
-            <GetCurrentTime /> <span>NPT</span>
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="uppercase text-xs sm:text-sm">Version</p>
+            <p className="text-[10px] sm:text-xs">
+              2026 © AN Creative Studios™
+            </p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <p className="uppercase text-xs sm:text-sm">Local Time</p>
+            <p className="text-[10px] sm:text-xs">
+              <GetCurrentTime /> NPT
+            </p>
+          </div>
         </div>
       </div>
     </footer>
