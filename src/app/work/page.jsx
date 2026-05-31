@@ -43,14 +43,9 @@ const Work = () => {
           graphics. More work available on request.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-[#e8e8e8]">
+        <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2">
           {projects.map((p, i) => (
-            <div
-              key={p.id}
-              className={`group bg-white overflow-hidden border-b border-[#e8e8e8] last:border-b-0 ${
-                i % 2 === 0 ? "md:border-r" : ""
-              } ${i < 2 ? "md:border-b" : "md:border-b-0"}`}
-            >
+            <div key={p.id} className="fgroup bg-white overflow-hidden">
               <div className="relative w-full aspect-video overflow-hidden">
                 <Image
                   src={p.img}
@@ -64,7 +59,7 @@ const Work = () => {
                 <p className="text-[#0EA5E9] text-xs tracking-widest uppercase mb-1.5">
                   {p.category}
                 </p>
-                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-(--fg)">
+                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#111]">
                   {p.title}
                 </h2>
               </div>
