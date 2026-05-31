@@ -35,7 +35,12 @@ const Contact = () => {
             project together.
           </motion.h1>
           <div className="flex flex-col gap-3 text-sm text-[#999]">
-            <p>ancreativestudio@gmail.com</p>
+            <a
+              href="mailto:ancreativestudio@gmail.com"
+              className="text-sm text-[lab(48.496_0_0)] hover:text-[#0EA5E9] transition-colors mt-1"
+            >
+              ancreativestudio@gmail.com
+            </a>
             <p>+977 9845839985</p>
             <p>Hetauda, Nepal</p>
             <p>Sun – Fri · 9:00 AM – 5:00 PM NPT</p>

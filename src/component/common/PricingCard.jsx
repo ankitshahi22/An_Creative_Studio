@@ -16,8 +16,12 @@ const TieredCard = ({ plan }) => (
       {plan.tiers.map((tier, i) => (
         <div key={tier.label}>
           <div className="flex items-baseline justify-between mb-1.5">
-            <span className="text-sm font-semibold text-[#111]">{tier.label}</span>
-            <span className="text-xs font-semibold text-[#0EA5E9]">{tier.price}</span>
+            <span className="text-sm font-semibold text-[#111]">
+              {tier.label}
+            </span>
+            <span className="text-xs font-semibold text-[#0EA5E9]">
+              {tier.price}
+            </span>
           </div>
           <p className="text-xs text-[#999] leading-relaxed">{tier.desc}</p>
           {i < plan.tiers.length - 1 && (
@@ -52,7 +56,9 @@ const ServicesCard = ({ plan }) => (
     }`}
   >
     <div className="flex items-center justify-between">
-      <p className="text-[#bbb] text-xs tracking-widest uppercase">{plan.name}</p>
+      <p className="text-[#bbb] text-xs tracking-widest uppercase">
+        {plan.name}
+      </p>
       {plan.featured && (
         <span className="text-[10px] font-semibold text-[#0EA5E9] border border-[#0EA5E9]/30 px-2 py-0.5 tracking-widest uppercase">
           Popular
@@ -66,9 +72,13 @@ const ServicesCard = ({ plan }) => (
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#555]">{service.label}</span>
             {service.custom ? (
-              <span className="text-xs font-semibold text-[#0EA5E9]">{service.price}</span>
+              <span className="text-xs font-semibold text-[#0EA5E9]">
+                {service.price}
+              </span>
             ) : (
-              <span className="text-xs font-medium text-[#999]">{service.price}</span>
+              <span className="text-xs font-medium text-[#999]">
+                {service.price}
+              </span>
             )}
           </div>
           {i < plan.services.length - 1 && (
@@ -83,7 +93,9 @@ const ServicesCard = ({ plan }) => (
         {plan.addons.map((addon) => (
           <div key={addon.label} className="flex items-center justify-between">
             <span className="text-xs text-[#ccc]">{addon.label}</span>
-            <span className="text-xs font-medium text-[#999]">{addon.price}</span>
+            <span className="text-xs font-medium text-[#999]">
+              {addon.price}
+            </span>
           </div>
         ))}
       </div>
@@ -130,7 +142,7 @@ const PricingCards = () => {
             <TieredCard key={plan.name} plan={plan} />
           ) : (
             <ServicesCard key={plan.name} plan={plan} />
-          )
+          ),
         )}
       </motion.div>
 
@@ -147,11 +159,11 @@ const PricingCards = () => {
           </p>
         </div>
 
-        <div className="flex gap-4 shrink-0 flex-wrap">
+        <div className="flex gap-4 shrink-0 flex-wrap flex-1">
           {RETAINERS.map((r) => (
             <div
               key={r.label}
-              className="flex flex-col items-center gap-1 border border-[#e8e8e8] px-8 py-5"
+              className="flex flex-col items-center gap-1 border border-[#e8e8e8] px-8 py-5 flex-1"
             >
               <span className="text-xs uppercase tracking-widest text-[#bbb] font-medium">
                 {r.label}
