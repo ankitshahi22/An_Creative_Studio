@@ -36,7 +36,7 @@ export default function ScrollToTop() {
         transform: visible ? "translateY(0)" : "translateY(12px)",
         transition: "opacity 0.35s ease, transform 0.35s ease",
       }}
-      className="fixed bottom-18 right-7 z-9990 flex items-center gap-2 px-4 py-2.5 bg-[#f5f4f2] border border-[#e8e8e8] text-[#555] text-xs font-[family-name:var(--font-inter)] tracking-wide hover:border-[#bbb] hover:text-[#111] transition-colors"
+      className="fixed bottom-22 right-7 z-9990 flex items-center gap-2 px-4 py-2.5 bg-[#f5f4f2] border border-[#e8e8e8] text-[#555] text-xs font-[family-name:var(--font-inter)] tracking-wide hover:border-[#bbb] hover:text-[#111] transition-colors"
     >
       <span>↑</span>
       <span className="hidden sm:inline">Scroll to top</span>
