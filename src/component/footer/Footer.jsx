@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import GetCurrentTime from "../../utils/CurrentTime";
 import { borderClr, footerData, linksData } from "../../store/data";
+import { useTheme } from "../../store/ThemeContext";
 
 const colFadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -14,6 +15,8 @@ const colFadeUp = (delay = 0) => ({
 });
 
 const Footer = () => {
+  const { theme, toggle } = useTheme();
+
   return (
     <footer>
       <div className={`${borderClr} border-[#e8e8e8]`}>
@@ -21,11 +24,14 @@ const Footer = () => {
           <motion.div {...colFadeUp(0)} className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
               <Image
-                src="/Logo.png"
+                src={
+                  theme === "dark" ? "/darkModeLogo.png" : "/lightModeLogo.png"
+                }
                 alt="AN Creative Studios"
                 loading="eager"
-                width={28}
-                height={28}
+                width={22}
+                height={22}
+                style={{ height: "auto" }}
               />
               <span className="text-sm font-semibold text-(--fg) font-[family-name:var(--font-sora)]">
                 AN Creative Studios™

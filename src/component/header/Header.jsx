@@ -20,11 +20,12 @@ export default function Header() {
       <div className="flex justify-between items-center px-5 sm:px-8 py-4 sm:bg-transparent sm:mix-blend-exclusion bg-(--bg)">
         <Link href="/" onClick={close} className="flex items-center gap-2.5">
           <Image
-            src="/Logo.png"
+            src={theme === "dark" ? "/darkModeLogo.png" : "/lightModeLogo.png"}
             alt="AN Creative Studios"
             loading="eager"
-            width={30}
-            height={30}
+            width={24}
+            height={24}
+            style={{ height: "auto" }}
           />
           <span className="text-sm font-semibold text-(--fg) font-[family-name:var(--font-sora)] tracking-tight">
             AN Creative Studios™
