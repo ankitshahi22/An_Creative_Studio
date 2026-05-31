@@ -27,5 +27,13 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .service-item:hover .preview-image {
     opacity: 1;
+    transform: scale(1.02);
   }
+}
+
+.preview-image {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
 }
