@@ -164,7 +164,7 @@ export default function HeroShader() {
       ref={canvasRef}
       aria-hidden="true"
       className="absolute inset-0 w-full h-full"
-      style={{ display: "block", zIndex: 0 }}
+      style={{ display: "block", zIndex: 0, pointerEvents: "none" }}
     />
   );
 }

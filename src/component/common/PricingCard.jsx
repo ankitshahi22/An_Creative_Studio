@@ -7,9 +7,9 @@ import Link from "next/link";
 const TieredCard = ({ plan }) => (
   <div className="flex flex-col gap-6 bg-white p-7 h-full border border-[#e8e8e8]">
     <div>
-      <p className="text-[#bbb] text-xs tracking-widest uppercase mb-1">
+      <h3 className="font-[family-name:var(--font-sora)] text-xl font-bold text-[#111]">
         {plan.name}
-      </p>
+      </h3>
     </div>
 
     <div className="flex flex-col gap-5 flex-1">
@@ -56,9 +56,9 @@ const ServicesCard = ({ plan }) => (
     }`}
   >
     <div className="flex items-center justify-between">
-      <p className="text-[#bbb] text-xs tracking-widest uppercase">
+      <h3 className="font-[family-name:var(--font-sora)] text-xl font-bold text-[#111]">
         {plan.name}
-      </p>
+      </h3>
       {plan.featured && (
         <span className="text-[10px] font-semibold text-[#0EA5E9] border border-[#0EA5E9]/30 px-2 py-0.5 tracking-widest uppercase">
           Popular
@@ -151,7 +151,7 @@ const PricingCards = () => {
           <p className="text-[#bbb] text-xs tracking-widest uppercase mb-3">
             Monthly Retainers
           </p>
-          <h3 className="font-[family-name:var(--font-sora)] text-2xl font-bold text-[#111] mb-2">
+          <h3 className="font-[family-name:var(--font-sora)] text-2xl font-bold text-(--fg) mb-2">
             Ready to scale?
           </h3>
           <p className="text-sm text-[#999] max-w-sm">
@@ -168,7 +168,7 @@ const PricingCards = () => {
               <span className="text-xs uppercase tracking-widest text-[#bbb] font-medium">
                 {r.label}
               </span>
-              <span className="font-[family-name:var(--font-sora)] text-xl font-bold text-[#111] mt-1">
+              <span className="font-[family-name:var(--font-sora)] text-xl font-bold text-(--fg) mt-1">
                 {r.price}
               </span>
               <span className="text-xs text-[#bbb] mt-0.5">{r.sub}</span>

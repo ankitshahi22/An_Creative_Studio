@@ -20,7 +20,7 @@ export default function StaggerTestimonials() {
             <p className="text-[#bbb] text-xs tracking-widest uppercase mb-3">
               Client words
             </p>
-            <h2 className="font-[family-name:var(--font-sora)] text-4xl font-bold text-[#111]">
+            <h2 className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg)">
               Testimonials
             </h2>
           </div>

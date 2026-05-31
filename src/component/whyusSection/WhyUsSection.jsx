@@ -75,7 +75,7 @@ const WhyUsSection = () => {
         <div>
           <motion.h2
             {...scrollFadeUp(0)}
-            className="font-[family-name:var(--font-sora)] text-4xl font-bold text-[#111] leading-tight mb-6"
+            className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg) leading-tight mb-6"
           >
             A small team.
             <br />

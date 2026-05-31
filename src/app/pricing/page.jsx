@@ -8,7 +8,7 @@ const Pricing = () => {
           <p className="text-[#888] text-xs tracking-widest uppercase mb-4">
             Pricing & Investment
           </p>
-          <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-4">
+          <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-(--fg) mb-4">
             Transparent Packages
           </h1>
           <p className="text-[#999] text-sm max-w-md">

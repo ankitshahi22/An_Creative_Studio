@@ -35,7 +35,7 @@ const Work = () => {
         <p className="text-[#888] text-xs tracking-widest uppercase mb-4">
           Portfolio
         </p>
-        <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-4">
+        <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-(--fg) mb-4">
           Selected Work
         </h1>
         <p className="text-[#999] text-sm mb-16 max-w-md">
@@ -64,7 +64,7 @@ const Work = () => {
                 <p className="text-[#0EA5E9] text-xs tracking-widest uppercase mb-1.5">
                   {p.category}
                 </p>
-                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#111]">
+                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-(--fg)">
                   {p.title}
                 </h2>
               </div>

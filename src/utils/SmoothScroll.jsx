@@ -12,13 +12,17 @@ export default function SmoothScroll({ children }) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
 
+    let rafId;
     function raf(time) {
       instance.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
-    return () => instance.destroy();
+    return () => {
+      cancelAnimationFrame(rafId);
+      instance.destroy();
+    };
   }, []);
 
   return (

@@ -27,7 +27,7 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-              <span className="text-sm font-semibold text-[#111] font-[family-name:var(--font-sora)]">
+              <span className="text-sm font-semibold text-(--fg) font-[family-name:var(--font-sora)]">
                 AN Creative Studios™
               </span>
             </div>

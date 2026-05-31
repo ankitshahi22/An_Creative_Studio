@@ -22,7 +22,7 @@ const GetInTouchSection = () => {
         </motion.p>
         <motion.h2
           {...scrollFadeUp(0.1)}
-          className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl md:text-6xl font-bold text-[#111] leading-[1.05] mb-8 sm:mb-10 max-w-xl"
+          className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl md:text-6xl font-bold text-(--fg) leading-[1.05] mb-8 sm:mb-10 max-w-xl"
         >
           Let&apos;s build something worth showing.
         </motion.h2>
@@ -33,7 +33,7 @@ const GetInTouchSection = () => {
         >
           <Link
             href="/contact"
-            className="px-8 py-3 bg-[#111] text-white font-semibold text-sm hover:bg-[#333] transition-colors"
+            className="px-4 py-2.5 bg-[#111] text-white font-semibold text-sm hover:bg-[#333] transition-colors dark:bg-white dark:text-[#111] dark:hover:bg-[#e8e8e8] rounded-lg"
           >
             Send a message →
           </Link>

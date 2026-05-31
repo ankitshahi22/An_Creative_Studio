@@ -23,7 +23,7 @@ export default function Work() {
         </motion.p>
         <motion.h2
           {...scrollFadeUp(0.1)}
-          className="font-[family-name:var(--font-sora)] text-4xl font-bold text-[#111]"
+          className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg)"
         >
           Services
         </motion.h2>

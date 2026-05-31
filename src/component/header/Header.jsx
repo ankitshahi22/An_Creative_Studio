@@ -26,7 +26,7 @@ export default function Header() {
             width={30}
             height={30}
           />
-          <span className="text-sm font-semibold text-[#111] font-[family-name:var(--font-sora)] tracking-tight">
+          <span className="text-sm font-semibold text-(--fg) font-[family-name:var(--font-sora)] tracking-tight">
             AN Creative Studios™
           </span>
         </Link>

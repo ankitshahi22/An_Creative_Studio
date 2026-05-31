@@ -94,7 +94,7 @@ const Services = () => {
         <p className="text-[#888] text-xs tracking-widest uppercase mb-4">
           What we offer
         </p>
-        <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-[#111] mb-16">
+        <h1 className="font-[family-name:var(--font-sora)] text-4xl sm:text-5xl font-bold text-(--fg) mb-16">
           Services
         </h1>
 

@@ -28,7 +28,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-[family-name:var(--font-sora)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#111] leading-tight mb-8"
+            className="font-[family-name:var(--font-sora)] text-3xl sm:text-4xl md:text-5xl font-bold text-(--fg) leading-tight mb-8"
           >
             Let&apos;s start a
             <br />
@@ -94,7 +94,7 @@ const Contact = () => {
               </button>
               <motion.button
                 type="submit"
-                className="px-4 py-2.5 bg-[#111] text-white text-sm font-semibold hover:bg-[#333] transition-colors rounded-lg"
+                className="px-4 py-2.5 bg-[#111] text-white text-sm font-semibold hover:bg-[#333] transition-colors rounded-lg hover:bg-[#333] transition-colors dark:bg-white dark:text-[#111] dark:hover:bg-[#e8e8e8]"
                 whileTap={{ scale: 0.97 }}
               >
                 {isSubmitting ? "Sending..." : "Send message →"}
