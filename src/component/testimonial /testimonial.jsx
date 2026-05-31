@@ -1,16 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { testimonials } from "../../store/data";
 
 export default function StaggerTestimonials() {
   const [active, setActive] = useState(0);
+  const dragStartX = useRef(null);
+  const isDragging = useRef(false);
 
   const next = () => setActive((p) => (p + 1) % testimonials.length);
   const prev = () =>
     setActive((p) => (p === 0 ? testimonials.length - 1 : p - 1));
+
+  const handleDragStart = (clientX) => {
+    dragStartX.current = clientX;
+    isDragging.current = false;
+  };
+
+  const handleDragEnd = (clientX) => {
+    if (dragStartX.current === null) return;
+    const diff = dragStartX.current - clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+    dragStartX.current = null;
+    isDragging.current = false;
+  };
+
+  const handleMouseDown = (e) => handleDragStart(e.clientX);
+  const handleMouseMove = (e) => {
+    if (dragStartX.current !== null) isDragging.current = true;
+  };
+  const handleMouseUp = (e) => handleDragEnd(e.clientX);
+  const handleMouseLeave = (e) => {
+    if (dragStartX.current !== null) handleDragEnd(e.clientX);
+  };
+
+  const handleTouchStart = (e) => handleDragStart(e.touches[0].clientX);
+  const handleTouchEnd = (e) => handleDragEnd(e.changedTouches[0].clientX);
 
   return (
     <section className="border-b border-[#e8e8e8] overflow-hidden">
@@ -26,7 +55,15 @@ export default function StaggerTestimonials() {
           </div>
         </div>
 
-        <div className="relative h-[280px]">
+        <div
+          className="relative h-[280px] cursor-grab active:cursor-grabbing select-none"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <AnimatePresence>
             {testimonials.map((item, index) => {
               const position =
