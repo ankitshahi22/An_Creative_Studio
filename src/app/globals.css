@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --ring: #0EA5E9;
+  --ring: #0ea5e9;
 }
 
 *,
@@ -11,7 +11,7 @@
 }
 
 html {
--webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -22,4 +22,10 @@ body {
 ::selection {
   background: #0ea5e9;
   color: #0c0c0c;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-item:hover .preview-image {
+    opacity: 1;
+  }
 }
