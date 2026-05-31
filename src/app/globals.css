@@ -1,7 +1,22 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --ring: #0ea5e9;
+  --bg: #f5f4f2;
+  --fg: #111111;
+  --bg-card: #fafafa;
+  --border-color: #e8e8e8;
+  --muted: #555555;
+}
+
+.dark {
+  --bg: #0c0c0c;
+  --fg: #f0eeec;
+  --bg-card: #161616;
+  --border-color: #2a2a2a;
+  --muted: #999999;
 }
 
 *,

@@ -3,7 +3,7 @@ import Work from "../component/work/work";
 import Testimonial from "../component/testimonial /testimonial";
 import WhyUsSection from "../component/whyusSection/WhyUsSection";
 import GetInTouchSection from "../component/GetInTouch/GetInTouchSection";
-import ScrollToTop from "../component/ScrollToTop";
+import ScrollToTop from "@/utils/ScrollToTop";
 
 export default function Home() {
   return (

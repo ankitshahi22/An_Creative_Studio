@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
-import { LenisContext } from "./LenisContext";
+import { LenisContext } from "@/store/LenisContext";
 
 export default function SmoothScroll({ children }) {
   const [lenis, setLenis] = useState(null);
 
   useEffect(() => {
     const instance = new Lenis();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
 
     function raf(time) {
@@ -21,8 +22,6 @@ export default function SmoothScroll({ children }) {
   }, []);
 
   return (
-    <LenisContext.Provider value={lenis}>
-      {children}
-    </LenisContext.Provider>
+    <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
   );
 }

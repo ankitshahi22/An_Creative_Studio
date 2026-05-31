@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLenis } from "./LenisContext";
+import { useLenis } from "@/store/LenisContext";
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -17,7 +17,10 @@ export default function ScrollToTop() {
 
   const scrollToTop = () => {
     if (lenis) {
-      lenis.scrollTo(0, { duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+      lenis.scrollTo(0, {
+        duration: 1.6,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
+      });
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -33,7 +36,7 @@ export default function ScrollToTop() {
         transform: visible ? "translateY(0)" : "translateY(12px)",
         transition: "opacity 0.35s ease, transform 0.35s ease",
       }}
-      className="fixed bottom-7 right-7 z-[9990] flex items-center gap-2 px-4 py-2.5 bg-[#f5f4f2] border border-[#e8e8e8] text-[#555] text-xs font-[family-name:var(--font-inter)] tracking-wide hover:border-[#bbb] hover:text-[#111] transition-colors"
+      className="fixed bottom-7 right-7 z-9990 flex items-center gap-2 px-4 py-2.5 bg-[#f5f4f2] border border-[#e8e8e8] text-[#555] text-xs font-[family-name:var(--font-inter)] tracking-wide hover:border-[#bbb] hover:text-[#111] transition-colors"
     >
       <span>↑</span>
       <span className="hidden sm:inline">Scroll to top</span>

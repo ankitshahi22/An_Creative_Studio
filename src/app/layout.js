@@ -2,8 +2,9 @@ import "./globals.css";
 import { Inter, Sora } from "next/font/google";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
-import SmoothScroll from "../component/SmoothScroll";
-import GrainOverlay from "../component/GrainOverlay";
+import GrainOverlay from "@/utils/GrainOverlay";
+import SmoothScroll from "@/utils/SmoothScroll";
+import { ThemeProvider } from "@/store/ThemeContext";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -29,15 +30,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-[#f5f4f2] text-[#111] font-(family-name:--font-inter)">
-        <GrainOverlay />
-        <SmoothScroll>
-          <Header />
-          <div className="h-[62px] shrink-0" />
-          {children}
-          <Footer />
-        </SmoothScroll>
+    <html lang="en" className={`${sora.variable} ${inter.variable} h-full`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-(--bg) text-(--fg) font-(family-name:--font-inter) transition-colors duration-300">
+        <ThemeProvider>
+          <GrainOverlay />
+          <SmoothScroll>
+            <Header />
+            <div className="h-[62px] shrink-0" />
+            {children}
+            <Footer />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

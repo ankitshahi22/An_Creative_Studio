@@ -24,22 +24,6 @@ export default function StaggerTestimonials() {
               Testimonials
             </h2>
           </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={prev}
-              className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
-              aria-label="Previous"
-            >
-              <ArrowLeft size={16} />
-            </button>
-            <button
-              onClick={next}
-              className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
-              aria-label="Next"
-            >
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </div>
 
         <div className="relative h-[280px]">
@@ -48,16 +32,35 @@ export default function StaggerTestimonials() {
               const position =
                 (index - active + testimonials.length) % testimonials.length;
 
-              let x = 0, rotate = 0, scale = 1, zIndex = 0, opacity = 1;
+              let x = 0,
+                rotate = 0,
+                scale = 1,
+                zIndex = 0,
+                opacity = 1;
 
               if (position === 0) {
-                x = 0; rotate = 0; scale = 1; zIndex = 10;
+                x = 0;
+                rotate = 0;
+                scale = 1;
+                zIndex = 10;
               } else if (position === 1) {
-                x = 240; rotate = 2; scale = 0.93; zIndex = 5; opacity = 0.4;
+                x = 240;
+                rotate = 2;
+                scale = 0.93;
+                zIndex = 5;
+                opacity = 0.4;
               } else if (position === testimonials.length - 1) {
-                x = -240; rotate = -2; scale = 0.93; zIndex = 5; opacity = 0.4;
+                x = -240;
+                rotate = -2;
+                scale = 0.93;
+                zIndex = 5;
+                opacity = 0.4;
               } else {
-                x = 480; rotate = 4; scale = 0.87; opacity = 0; zIndex = 0;
+                x = 480;
+                rotate = 4;
+                scale = 0.87;
+                opacity = 0;
+                zIndex = 0;
               }
 
               const isActive = position === 0;
@@ -66,9 +69,14 @@ export default function StaggerTestimonials() {
                 <motion.div
                   key={index}
                   animate={{ x, rotate, scale, opacity }}
-                  transition={{ type: "spring", stiffness: 130, damping: 20, mass: 0.8 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 130,
+                    damping: 20,
+                    mass: 0.8,
+                  }}
                   style={{ zIndex }}
-                  className="absolute left-1/2 top-0 w-[300px] md:w-[480px] -translate-x-1/2"
+                  className="absolute left-1/2 top-0 w-[300px] md:w-[350px] -translate-x-1/2"
                 >
                   <div
                     className={`p-8 border transition-colors duration-300 ${
@@ -84,10 +92,14 @@ export default function StaggerTestimonials() {
                     >
                       &ldquo;{item.text}&rdquo;
                     </p>
-                    <p className={`text-sm font-semibold ${isActive ? "text-[#111]" : "text-[#ccc]"}`}>
+                    <p
+                      className={`text-sm font-semibold ${isActive ? "text-[#111]" : "text-[#ccc]"}`}
+                    >
                       {item.name}
                     </p>
-                    <p className={`text-xs mt-0.5 ${isActive ? "text-[#999]" : "text-[#ccc]"}`}>
+                    <p
+                      className={`text-xs mt-0.5 ${isActive ? "text-[#999]" : "text-[#ccc]"}`}
+                    >
                       {item.role}
                     </p>
                   </div>
@@ -95,6 +107,22 @@ export default function StaggerTestimonials() {
               );
             })}
           </AnimatePresence>
+        </div>
+        <div className="flex items-center justify-center gap-3 mt-2 sm:mt-0">
+          <button
+            onClick={prev}
+            className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
+            aria-label="Previous"
+          >
+            <ArrowLeft size={16} />
+          </button>
+          <button
+            onClick={next}
+            className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
+            aria-label="Next"
+          >
+            <ArrowRight size={16} />
+          </button>
         </div>
       </div>
     </section>
