@@ -1,0 +1,72 @@
+"use client";
+import { useEffect, useRef } from "react";
+
+// Two-layer overlay for a video-editor workstation feel:
+//   1. Film grain   — animated canvas noise at ~24 fps (cinematic)
+//   2. Scan lines   — CSS repeating-gradient (zero cost, always on)
+// Both sit above all content, pointer-events-none.
+
+const GRAIN_SIZE = 200; // drawn at 200×200, stretched via CSS
+
+export default function GrainOverlay() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    canvas.width  = GRAIN_SIZE;
+    canvas.height = GRAIN_SIZE;
+
+    let raf, tick = 0;
+
+    const draw = () => {
+      raf = requestAnimationFrame(draw);
+      if (++tick % 2 !== 0) return; // ~24 fps
+
+      const img = ctx.createImageData(GRAIN_SIZE, GRAIN_SIZE);
+      const d = img.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const v = (Math.random() * 255) | 0;
+        d[i] = d[i + 1] = d[i + 2] = v;
+        d[i + 3] = (Math.random() * 20) | 0; // 0–20 alpha
+      }
+      ctx.putImageData(img, 0, 0);
+    };
+
+    draw();
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  return (
+    <>
+      {/* Grain */}
+      <canvas
+        ref={canvasRef}
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          zIndex: 9997,
+          opacity: 0.32,
+          mixBlendMode: "overlay",
+        }}
+      />
+      {/* Scanlines — 1 px line every 4 px, very subtle */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          inset: 0,
+          pointerEvents: "none",
+          zIndex: 9996,
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.022) 3px, rgba(0,0,0,0.022) 4px)",
+        }}
+      />
+    </>
+  );
+}
