@@ -7,25 +7,25 @@ const projects = [
   {
     heading: "Graphic Design",
     subheading: "Brand identity, logos, print & digital",
-    imgSrc: "/img1.png",
+    imgSrc: "/NikeAirMax.png",
     href: "/services",
   },
   {
     heading: "Video Editing",
     subheading: "Long-form, shorts, promos, cinematic",
-    imgSrc: "/img2.png",
+    imgSrc: "/MrBeastThumbnail.jpg",
     href: "/services",
   },
   {
     heading: "Motion Graphics",
     subheading: "Animated logos, intros, explainers",
-    imgSrc: "/img3.png",
+    imgSrc: "/AfterEffectComposition.jpg",
     href: "/services",
   },
   {
     heading: "Social Content",
     subheading: "Reels, thumbnails, carousels",
-    imgSrc: "/img4.png",
+    imgSrc: "/YoutubeThumbnailsGrid.jpg.webp",
     href: "/services",
   },
 ];
@@ -36,17 +36,44 @@ export default function WorkSection() {
       {/* Chromatic aberration — RGB channel split, very video-editor */}
       <svg
         aria-hidden="true"
-        style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}
+        style={{
+          position: "absolute",
+          width: 0,
+          height: 0,
+          overflow: "hidden",
+        }}
       >
         <defs>
-          <filter id="chroma-ab" x="0%" y="0%" width="100%" height="100%" colorInterpolationFilters="sRGB">
+          <filter
+            id="chroma-ab"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            colorInterpolationFilters="sRGB"
+          >
             {/* Red channel — shift right */}
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" in="SourceGraphic" result="r" />
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
+              in="SourceGraphic"
+              result="r"
+            />
             <feOffset in="r" dx="4" dy="0" result="rShift" />
             {/* Green channel — no shift */}
-            <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" in="SourceGraphic" result="g" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"
+              in="SourceGraphic"
+              result="g"
+            />
             {/* Blue channel — shift left */}
-            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" in="SourceGraphic" result="b" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"
+              in="SourceGraphic"
+              result="b"
+            />
             <feOffset in="b" dx="-4" dy="0" result="bShift" />
             {/* Recombine with screen blend */}
             <feBlend in="rShift" in2="g" mode="screen" result="rg" />
@@ -74,7 +101,10 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
   const [canHover, setCanHover] = useState(false);
 
   useEffect(() => {
-    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCanHover(
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches,
+    );
   }, []);
 
   const handleMouseMove = (e) => {
@@ -119,7 +149,13 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
       </div>
 
       <motion.img
-        style={{ top, left, translateX: "-50%", translateY: "-50%", filter: "url(#chroma-ab)" }}
+        style={{
+          top,
+          left,
+          translateX: "-50%",
+          translateY: "-50%",
+          filter: "url(#chroma-ab)",
+        }}
         variants={{
           initial: { scale: 0, opacity: 0 },
           whileHover: { scale: 1, opacity: 1 },

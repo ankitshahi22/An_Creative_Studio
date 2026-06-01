@@ -25,9 +25,8 @@ export default function Header() {
             loading="eager"
             width={24}
             height={24}
-            style={{ height: "auto" }}
           />
-          <span className="text-sm font-semibold text-(--fg) font-[family-name:var(--font-sora)] tracking-tight">
+          <span className="text-sm font-semibold text-(--fg) font-(family-name:--font-sora) tracking-tight">
             AN Creative Studios™
           </span>
         </Link>
