@@ -1,32 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-  {
-    id: "01",
-    title: "Brand Identity",
-    category: "Graphic Design",
-    img: "/img1.png",
-  },
-  {
-    id: "02",
-    title: "Video Production",
-    category: "Video Editing",
-    img: "/img2.png",
-  },
-  {
-    id: "03",
-    title: "Motion Graphics",
-    category: "Animation",
-    img: "/img3.png",
-  },
-  {
-    id: "04",
-    title: "Social Content",
-    category: "Design & Editing",
-    img: "/img4.png",
-  },
-];
+import { projects } from "@/store/data";
 
 const Work = () => {
   return (
@@ -44,8 +18,12 @@ const Work = () => {
         </p>
 
         <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2">
-          {projects.map((p, i) => (
-            <div key={p.id} className="fgroup bg-white overflow-hidden">
+          {projects.map((p) => (
+            <Link
+              key={p.id}
+              href={p.href}
+              className="group bg-white overflow-hidden block"
+            >
               <div className="relative w-full aspect-video overflow-hidden">
                 <Image
                   src={p.img}
@@ -54,16 +32,26 @@ const Work = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white text-sm font-semibold flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-300 underline rounded-xl">
+                    View →
+                  </span>
+                </div>
               </div>
-              <div className="p-6 border-t border-[#e8e8e8]">
-                <p className="text-[#0EA5E9] text-xs tracking-widest uppercase mb-1.5">
-                  {p.category}
-                </p>
-                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#111]">
-                  {p.title}
-                </h2>
+              <div className="p-6 border-t border-[#e8e8e8] flex items-center justify-between">
+                <div>
+                  <p className="text-[#0EA5E9] text-xs tracking-widest uppercase mb-1.5">
+                    {p.category}
+                  </p>
+                  <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#111]">
+                    {p.title}
+                  </h2>
+                </div>
+                <span className="lg:hidden inline-flex items-center gap-1 text-xs font-semibold text-[#0EA5E9] border border-[#0EA5E9] px-3 py-1.5 rounded-full">
+                  View →
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -55,6 +55,37 @@ export const footerData = [
   { icon: <Clock size={14} />, text: "Sun – Fri · 9:00 AM – 5:00 PM NPT" },
 ];
 
+export const projects = [
+  {
+    id: "01",
+    title: "Brand Identity",
+    category: "Graphic Design",
+    img: "/img1.png",
+    href: "#",
+  },
+  {
+    id: "02",
+    title: "Video Production",
+    category: "Video Editing",
+    img: "/img2.png",
+    href: "#",
+  },
+  {
+    id: "03",
+    title: "Motion Graphics",
+    category: "Animation",
+    img: "/img3.png",
+    href: "#",
+  },
+  {
+    id: "04",
+    title: "Social Content",
+    category: "Design & Editing",
+    img: "/img4.png",
+    href: "#",
+  },
+];
+
 export const SERVICES = [
   {
     name: "Graphic Design",
