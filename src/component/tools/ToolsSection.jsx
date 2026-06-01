@@ -3,11 +3,11 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 const tools = [
-  { name: "Premiere Pro", src: "/premiere-pro.svg", isVector: true },
-  { name: "Adobe Photoshop", src: "/photoshop.svg", isVector: true },
-  { name: "Adobe Illustrator", src: "/illustrator.svg", isVector: true },
-  { name: "DaVinci Resolve", src: "/davinciResolve.png", isVector: false },
-  { name: "After Effects", src: "/after-effects.svg", isVector: true },
+  { name: "Premiere Pro", src: "/premiere-pro.svg" },
+  { name: "Adobe Photoshop", src: "/photoshop.svg" },
+  { name: "Adobe Illustrator", src: "/illustrator.svg" },
+  { name: "DaVinci Resolve", src: "/davinciResolve.png" },
+  { name: "After Effects", src: "/after-effects.svg" },
 ];
 
 const ToolsSection = () => {
@@ -39,15 +39,7 @@ const ToolsSection = () => {
               className="flex flex-col items-center gap-2 group"
             >
               <div className="w-12 h-12 flex items-center justify-center">
-                <Image
-                  src={tool.src}
-                  alt={tool.name}
-                  width={48}
-                  height={48}
-                  className={`object-contain transition-transform duration-300 group-hover:scale-110 ${
-                    !tool.isVector ? "rounded-md" : ""
-                  }`}
-                />
+                <Image src={tool.src} alt={tool.name} width={48} height={48} />
               </div>
               <span className="text-[11px] text-[#888] tracking-wide text-center leading-tight">
                 {tool.name}

@@ -42,6 +42,7 @@ export default function StaggerTestimonials() {
                   width={40}
                   height={40}
                   className="rounded-full"
+                  style={{ width: "45px", height: "auto" }}
                 />
                 <div>
                   <p className="text-sm font-semibold text-[#111]">

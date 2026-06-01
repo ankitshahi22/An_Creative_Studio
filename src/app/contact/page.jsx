@@ -37,7 +37,7 @@ const Contact = () => {
           <div className="flex flex-col gap-3 text-sm text-[#999]">
             <a
               href="mailto:ancreativestudio@gmail.com"
-              className="text-sm text-[lab(48.496_0_0)] hover:text-[#0EA5E9] transition-colors mt-1"
+              className="text-sm text-[#888] hover:text-[#0EA5E9] transition-colors mt-1"
             >
               ancreativestudio@gmail.com
             </a>
@@ -88,7 +88,7 @@ const Contact = () => {
               <button
                 type="button"
                 onClick={reset}
-                className="text-sm text-[#888] hover:text-[#888] transition-colors"
+                className="text-sm text-[#888] hover:text-yellow-600 transition-colors"
               >
                 Clear
               </button>
