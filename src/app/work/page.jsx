@@ -17,7 +17,7 @@ const Work = () => {
           graphics. More work available on request.
         </p>
 
-        <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {projects.map((p) => (
             <Link
               key={p.id}
