@@ -15,7 +15,7 @@ const colFadeUp = (delay = 0) => ({
 });
 
 const Footer = () => {
-  const { theme, toggle } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <footer>
@@ -88,23 +88,10 @@ const Footer = () => {
       </div>
 
       <div className="border-[#f0f0f0]">
-        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between text-xs sm:text-sm text-[#888]">
-          <div className="flex flex-col gap-1">
-            <p className="uppercase text-xs sm:text-sm font-semibold">
-              Version
-            </p>
-            <p className="text-[10px] sm:text-xs">
-              2026 © AN Creative Studios™
-            </p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <p className="uppercase text-xs sm:text-sm font-semibold">
-              Local Time
-            </p>
-            <p className="text-[10px] sm:text-xs">
-              <GetCurrentTime /> NPT
-            </p>
-          </div>
+        <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-center text-center">
+          <p className="text-[10px] sm:text-xs text-[#888]">
+            Copyright ©️ AN Creative Studios™️. All Rights Reserved 2026.
+          </p>
         </div>
       </div>
     </footer>

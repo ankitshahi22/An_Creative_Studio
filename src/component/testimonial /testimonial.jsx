@@ -1,46 +1,7 @@
-"use client";
-
-import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { testimonials } from "../../store/data";
+import Image from "next/image";
 
 export default function StaggerTestimonials() {
-  const [active, setActive] = useState(0);
-  const dragStartX = useRef(null);
-  const isDragging = useRef(false);
-
-  const next = () => setActive((p) => (p + 1) % testimonials.length);
-  const prev = () =>
-    setActive((p) => (p === 0 ? testimonials.length - 1 : p - 1));
-
-  const handleDragStart = (clientX) => {
-    dragStartX.current = clientX;
-    isDragging.current = false;
-  };
-
-  const handleDragEnd = (clientX) => {
-    if (dragStartX.current === null) return;
-    const diff = dragStartX.current - clientX;
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? next() : prev();
-    }
-    dragStartX.current = null;
-    isDragging.current = false;
-  };
-
-  const handleMouseDown = (e) => handleDragStart(e.clientX);
-  const handleMouseMove = (e) => {
-    if (dragStartX.current !== null) isDragging.current = true;
-  };
-  const handleMouseUp = (e) => handleDragEnd(e.clientX);
-  const handleMouseLeave = (e) => {
-    if (dragStartX.current !== null) handleDragEnd(e.clientX);
-  };
-
-  const handleTouchStart = (e) => handleDragStart(e.touches[0].clientX);
-  const handleTouchEnd = (e) => handleDragEnd(e.changedTouches[0].clientX);
-
   return (
     <section className="border-b border-[#e8e8e8] overflow-hidden">
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
@@ -49,117 +10,41 @@ export default function StaggerTestimonials() {
             <p className="text-[#888] text-xs tracking-widest uppercase mb-3">
               Client words
             </p>
-            <h2 className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg)">
+            <h2 className="font-(family-name:--font-sora) text-4xl font-bold text-(--fg)">
               Testimonials
             </h2>
           </div>
         </div>
 
-        <div
-          className="relative h-[280px] cursor-grab active:cursor-grabbing select-none"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseLeave}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <AnimatePresence>
-            {testimonials.map((item, index) => {
-              const position =
-                (index - active + testimonials.length) % testimonials.length;
-
-              let x = 0,
-                rotate = 0,
-                scale = 1,
-                zIndex = 0,
-                opacity = 1;
-
-              if (position === 0) {
-                x = 0;
-                rotate = 0;
-                scale = 1;
-                zIndex = 10;
-              } else if (position === 1) {
-                x = 240;
-                rotate = 2;
-                scale = 0.93;
-                zIndex = 5;
-                opacity = 0.4;
-              } else if (position === testimonials.length - 1) {
-                x = -240;
-                rotate = -2;
-                scale = 0.93;
-                zIndex = 5;
-                opacity = 0.4;
-              } else {
-                x = 480;
-                rotate = 4;
-                scale = 0.87;
-                opacity = 0;
-                zIndex = 0;
-              }
-
-              const isActive = position === 0;
-
-              return (
-                <motion.div
-                  key={index}
-                  animate={{ x, rotate, scale, opacity }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 130,
-                    damping: 20,
-                    mass: 0.8,
-                  }}
-                  style={{ zIndex }}
-                  className="absolute left-1/2 top-0 w-[300px] md:w-[350px] -translate-x-1/2"
-                >
-                  <div
-                    className={`p-8 border transition-colors duration-300 ${
-                      isActive
-                        ? "bg-white border-[#e8e8e8] border-l-[#0EA5E9] border-l-2"
-                        : "bg-[#f5f5f5] border-[#f0f0f0]"
-                    }`}
-                  >
-                    <p
-                      className={`text-lg leading-snug mb-6 font-[family-name:var(--font-sora)] ${
-                        isActive ? "text-[#111]" : "text-[#ccc]"
-                      }`}
-                    >
-                      &ldquo;{item.text}&rdquo;
-                    </p>
-                    <p
-                      className={`text-sm font-semibold ${isActive ? "text-[#111]" : "text-[#ccc]"}`}
-                    >
-                      {item.name}
-                    </p>
-                    <p
-                      className={`text-xs mt-0.5 ${isActive ? "text-[#999]" : "text-[#ccc]"}`}
-                    >
-                      {item.role}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </div>
-        <div className="flex items-center justify-center gap-3 mt-2 sm:mt-0">
-          <button
-            onClick={prev}
-            className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
-            aria-label="Previous"
-          >
-            <ArrowLeft size={16} />
-          </button>
-          <button
-            onClick={next}
-            className="w-10 h-10 border border-[#e8e8e8] flex items-center justify-center text-[#bbb] hover:text-[#111] hover:border-[#bbb] transition-colors"
-            aria-label="Next"
-          >
-            <ArrowRight size={16} />
-          </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {testimonials.map((item, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-2xl border border-[#e8e8e8] bg-white flex flex-col gap-4"
+            >
+              <span className="text-5xl text-[#ddd] font-serif leading-none select-none -mb-6">
+                &ldquo;
+              </span>
+              <p className="text-sm text-[#333] leading-relaxed font-(family-name:--font-sora) flex-1">
+                {item.text}
+              </p>
+              <div className="border-t border-[#e8e8e8] pt-4 flex items-center gap-1">
+                <Image
+                  src="/userIcon.png"
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-[#111]">
+                    {item.name}
+                  </p>
+                  <p className="text-xs text-[#999] mt-0.5">{item.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
