@@ -1,5 +1,8 @@
+"use client";
+
 import { testimonials } from "../../store/data";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function StaggerTestimonials() {
   return (
@@ -18,8 +21,12 @@ export default function StaggerTestimonials() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((item, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="p-6 rounded-2xl border border-[#e8e8e8] bg-white flex flex-col gap-4"
             >
               <span className="text-5xl text-[#ddd] font-serif leading-none select-none -mb-6">
@@ -43,7 +50,7 @@ export default function StaggerTestimonials() {
                   <p className="text-xs text-[#999] mt-0.5">{item.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
