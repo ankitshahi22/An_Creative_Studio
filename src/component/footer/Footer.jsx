@@ -90,7 +90,7 @@ const Footer = () => {
       <div className="border-[#f0f0f0]">
         <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-center text-center">
           <p className="text-[10px] sm:text-xs text-[#888]">
-            Copyright ©️ AN Creative Studios™️. All Rights Reserved 2026.
+            Copyright © AN Creative Studios™ — All Rights Reserved 2026.
           </p>
         </div>
       </div>
