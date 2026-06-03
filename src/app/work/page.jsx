@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/store/data";
 
+export const metadata = {
+  title: "Work",
+  description:
+    "Browse a portfolio of video editing projects — YouTube videos, motion graphics, and cinematic edits by Nirjal Timalsina.",
+};
+
 const Work = () => {
   return (
     <div className="min-h-screen border-b border-[#e8e8e8]">

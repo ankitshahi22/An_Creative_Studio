@@ -5,6 +5,12 @@ import Input from "../../utils/Input";
 import { motion } from "framer-motion";
 import useForm from "../../component/hooks/useForm";
 
+export const metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Nirjal Timalsina for video editing projects and collaborations.",
+};
+
 const Contact = () => {
   const {
     values,

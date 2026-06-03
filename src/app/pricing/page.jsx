@@ -1,5 +1,11 @@
 import PricingCards from "../../component/common/PricingCard";
 
+export const metadata = {
+  title: "Pricing",
+  description:
+    "Transparent pricing for professional video editing services by Nirjal Timalsina.",
+};
+
 const Pricing = () => {
   return (
     <div className="min-h-svh border-b border-[#e8e8e8]">

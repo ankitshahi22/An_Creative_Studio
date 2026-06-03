@@ -21,17 +21,42 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "AN Creative Studios — Video Editing & Design, Nepal",
-  description:
-    "AN Creative Studios is a creative production studio based in Hetauda, Nepal. Video editing, graphic design, and motion graphics for creators and brands.",
-  openGraph: {
-    title: "AN Creative Studios — Video Editing & Design, Nepal",
-    description:
-      "Creative production studio in Hetauda, Nepal. Video editing, graphic design, and motion graphics.",
-    type: "website",
+  metadataBase: new URL("https://nirjal-portfolio.vercel.app"),
+  title: {
+    default: "Nirjal Timalsina — Video Editor",
+    template: "%s | Nirjal Timalsina",
   },
-  verification: {
-    google: "google18b0523c69921e1c.html",
+  description:
+    "Professional video editor specializing in YouTube content, motion graphics, and cinematic edits. Based in Nepal, working with clients worldwide.",
+  keywords: [
+    "video editor",
+    "Nirjal Timalsina",
+    "YouTube editing",
+    "motion graphics",
+    "Nepal video editor",
+  ],
+  openGraph: {
+    title: "Nirjal Timalsina — Video Editor",
+    description:
+      "Professional video editor specializing in YouTube content and cinematic edits.",
+    url: "https://nirjal-portfolio.vercel.app",
+    siteName: "Nirjal Timalsina",
+    type: "website",
+    images: [
+      {
+        url: "/img1.png",
+        width: 1200,
+        height: 630,
+        alt: "Nirjal Timalsina — Video Editor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nirjal Timalsina — Video Editor",
+    description:
+      "Professional video editor specializing in YouTube content and cinematic edits.",
+    images: ["/img1.png"],
   },
 };
 
