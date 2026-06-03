@@ -86,10 +86,23 @@ export default function HeroShader() {
 
   // Defer WebGL init until after first paint so it doesn't block LCP
   useEffect(() => {
-    const id = requestIdleCallback
-      ? requestIdleCallback(() => setReady(true), { timeout: 300 })
+    const ric =
+      typeof window !== "undefined" && window.requestIdleCallback
+        ? window.requestIdleCallback
+        : null;
+    const cic =
+      typeof window !== "undefined" && window.cancelIdleCallback
+        ? window.cancelIdleCallback
+        : null;
+
+    const id = ric
+      ? ric(() => setReady(true), { timeout: 300 })
       : setTimeout(() => setReady(true), 100);
-    return () => (requestIdleCallback ? cancelIdleCallback(id) : clearTimeout(id));
+
+    return () => {
+      if (ric && cic) cic(id);
+      else clearTimeout(id);
+    };
   }, []);
 
   useEffect(() => {
@@ -128,15 +141,15 @@ export default function HeroShader() {
     gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
     const uTime = gl.getUniformLocation(prog, "u_t");
-    const uRes  = gl.getUniformLocation(prog, "u_res");
+    const uRes = gl.getUniformLocation(prog, "u_res");
     const uDark = gl.getUniformLocation(prog, "u_dark");
 
     const setSize = () => {
       const dpr = Math.min(window.devicePixelRatio, 1.5);
-      const w = Math.round(canvas.clientWidth  * dpr);
+      const w = Math.round(canvas.clientWidth * dpr);
       const h = Math.round(canvas.clientHeight * dpr);
       if (canvas.width !== w || canvas.height !== h) {
-        canvas.width  = w;
+        canvas.width = w;
         canvas.height = h;
         gl.viewport(0, 0, w, h);
       }

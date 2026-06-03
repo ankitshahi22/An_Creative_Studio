@@ -25,6 +25,7 @@ export default function Header() {
             loading="eager"
             width={24}
             height={24}
+            className="h-auto w-auto"
           />
           <span className="text-sm font-semibold text-(--fg) font-(family-name:--font-sora) tracking-tight">
             AN Creative Studios™
