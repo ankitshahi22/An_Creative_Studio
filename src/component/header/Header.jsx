@@ -23,8 +23,9 @@ export default function Header() {
             src={theme === "dark" ? "/darkModeLogo.png" : "/lightModeLogo.png"}
             alt="AN Creative Studios"
             loading="eager"
-            width={24}
-            height={24}
+            width={120}
+            height={40}
+            className="h-8 w-auto"
           />
           <span className="text-sm font-semibold text-(--fg) font-(family-name:--font-sora) tracking-tight">
             AN Creative Studios™
