@@ -9,11 +9,15 @@ import { ThemeProvider } from "@/store/ThemeContext";
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata = {

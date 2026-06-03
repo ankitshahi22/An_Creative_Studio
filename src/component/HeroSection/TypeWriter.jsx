@@ -6,10 +6,10 @@ const words = ["Graphics.", "Logos.", "Videos.", "Brands."];
 
 const TypeWriter = () => {
   const [{ text, i, del, paused }, set] = useState({
-    text: "",
+    text: words[0],
     i: 0,
     del: false,
-    paused: false,
+    paused: true, // start paused so first word is visible before cycling
   });
 
   const t = useRef(null);

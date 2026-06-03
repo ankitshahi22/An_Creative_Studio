@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/store/ThemeContext";
 
 // Cinematic color-grade background shader.
@@ -82,12 +82,22 @@ export default function HeroShader() {
   const canvasRef = useRef(null);
   const { theme } = useTheme();
   const darkRef = useRef(theme === "dark" ? 1 : 0);
+  const [ready, setReady] = useState(false);
+
+  // Defer WebGL init until after first paint so it doesn't block LCP
+  useEffect(() => {
+    const id = requestIdleCallback
+      ? requestIdleCallback(() => setReady(true), { timeout: 300 })
+      : setTimeout(() => setReady(true), 100);
+    return () => (requestIdleCallback ? cancelIdleCallback(id) : clearTimeout(id));
+  }, []);
 
   useEffect(() => {
     darkRef.current = theme === "dark" ? 1 : 0;
   }, [theme]);
 
   useEffect(() => {
+    if (!ready) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const gl = canvas.getContext("webgl");
@@ -157,7 +167,7 @@ export default function HeroShader() {
       gl.deleteShader(frag);
       gl.deleteBuffer(buf);
     };
-  }, []);
+  }, [ready]);
 
   return (
     <canvas

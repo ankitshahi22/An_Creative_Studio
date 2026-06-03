@@ -22,7 +22,7 @@ export default function GrainOverlay() {
 
     const draw = () => {
       raf = requestAnimationFrame(draw);
-      if (++tick % 2 !== 0) return; // ~24 fps
+      if (++tick % 5 !== 0) return; // ~12 fps
 
       const img = ctx.createImageData(GRAIN_SIZE, GRAIN_SIZE);
       const d = img.data;

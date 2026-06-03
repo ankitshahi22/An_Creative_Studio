@@ -6,9 +6,9 @@ import TypeWriter from "./TypeWriter";
 import HeroShader from "./HeroShader";
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1], delay },
 });
 
 const HeroSection = () => {
@@ -23,17 +23,15 @@ const HeroSection = () => {
           Hetauda, Nepal &nbsp;·&nbsp; Est. 2016
         </motion.p>
 
-        <motion.h1
-          {...fadeUp(0.12)}
-          className="font-[family-name:var(--font-sora)] text-5xl md:text-7xl font-bold text-(--fg) leading-[1.05] mb-8"
-        >
+        {/* h1 is the LCP element — render visible immediately, no opacity:0 */}
+        <h1 className="font-[family-name:var(--font-sora)] text-5xl md:text-7xl font-bold text-(--fg) leading-[1.05] mb-8">
           We create
           <br />
           <TypeWriter />
-        </motion.h1>
+        </h1>
 
         <motion.p
-          {...fadeUp(0.24)}
+          {...fadeUp(0.1)}
           className="text-(--muted) text-base md:text-lg max-w-lg leading-relaxed mb-10 font-[family-name:var(--font-inter)]"
         >
           Video editing, graphic design, and motion graphics for YouTube
@@ -41,7 +39,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          {...fadeUp(0.36)}
+          {...fadeUp(0.2)}
           className="flex items-center gap-4 flex-wrap"
         >
           <Link
@@ -60,7 +58,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div
-        {...fadeUp(0.5)}
+        {...fadeUp(0.3)}
         className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 pb-10"
       >
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-(--muted) text-xs font-[family-name:var(--font-inter)] tracking-widest uppercase">

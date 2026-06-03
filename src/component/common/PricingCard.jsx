@@ -168,7 +168,7 @@ const PricingCards = () => {
               <span className="text-xs uppercase tracking-widest text-[#bbb] font-medium">
                 {r.label}
               </span>
-              <span className="font-[family-name:var(--font-sora)] text-xl font-bold text-(--fg) mt-1">
+              <span className="font-[family-name:var(--font-sora)] text-center text-xl font-bold text-(--fg) mt-1">
                 {r.price}
               </span>
               <span className="text-xs text-[#bbb] mt-0.5">{r.sub}</span>

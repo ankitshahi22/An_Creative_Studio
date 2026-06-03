@@ -1,10 +1,12 @@
+import dynamic from "next/dynamic";
 import HeroSection from "../component/HeroSection/HeroSection";
-import Work from "../component/work/work";
-import Testimonial from "../component/testimonial /testimonial";
-import WhyUsSection from "../component/whyusSection/WhyUsSection";
-import ToolsSection from "../component/tools/ToolsSection";
-import GetInTouchSection from "../component/GetInTouch/GetInTouchSection";
-import ScrollToTop from "@/utils/ScrollToTop";
+
+const WhyUsSection = dynamic(() => import("../component/whyusSection/WhyUsSection"));
+const ToolsSection = dynamic(() => import("../component/tools/ToolsSection"));
+const Work = dynamic(() => import("../component/work/work"));
+const Testimonial = dynamic(() => import("../component/testimonial /testimonial"));
+const GetInTouchSection = dynamic(() => import("../component/GetInTouch/GetInTouchSection"));
+const ScrollToTop = dynamic(() => import("@/utils/ScrollToTop"));
 
 export default function Home() {
   return (

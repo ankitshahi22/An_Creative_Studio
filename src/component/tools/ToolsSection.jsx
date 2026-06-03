@@ -19,10 +19,19 @@ const ToolsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-xs uppercase tracking-widest text-[#888] mb-10"
+          className="text-xs uppercase tracking-widest text-[#888] mb-3"
+        >
+          Built with
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+          className="font-[family-name:var(--font-sora)] text-4xl font-bold text-(--fg) mb-10"
         >
           Software Tools
-        </motion.p>
+        </motion.h2>
 
         <div className="flex flex-wrap gap-8 sm:gap-12 items-center">
           {tools.map((tool, i) => (
