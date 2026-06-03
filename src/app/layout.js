@@ -30,11 +30,18 @@ export const metadata = {
       "Creative production studio in Hetauda, Nepal. Video editing, graphic design, and motion graphics.",
     type: "website",
   },
+  verification: {
+    google: "google18b0523c69921e1c.html",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} h-full`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${sora.variable} ${inter.variable} h-full`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col bg-(--bg) text-(--fg) font-(family-name:--font-inter) transition-colors duration-300">
         <ThemeProvider>
           <GrainOverlay />
