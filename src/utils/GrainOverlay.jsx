@@ -1,12 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-// Two-layer overlay for a video-editor workstation feel:
-//   1. Film grain   — animated canvas noise at ~24 fps (cinematic)
-//   2. Scan lines   — CSS repeating-gradient (zero cost, always on)
-// Both sit above all content, pointer-events-none.
-
-const GRAIN_SIZE = 200; // drawn at 200×200, stretched via CSS
+const GRAIN_SIZE = 200;
 
 export default function GrainOverlay() {
   const canvasRef = useRef(null);
@@ -22,14 +17,14 @@ export default function GrainOverlay() {
 
     const draw = () => {
       raf = requestAnimationFrame(draw);
-      if (++tick % 5 !== 0) return; // ~12 fps
+      if (++tick % 5 !== 0) return;
 
       const img = ctx.createImageData(GRAIN_SIZE, GRAIN_SIZE);
       const d = img.data;
       for (let i = 0; i < d.length; i += 4) {
         const v = (Math.random() * 255) | 0;
         d[i] = d[i + 1] = d[i + 2] = v;
-        d[i + 3] = (Math.random() * 20) | 0; // 0–20 alpha
+        d[i + 3] = (Math.random() * 20) | 0;
       }
       ctx.putImageData(img, 0, 0);
     };
@@ -40,7 +35,6 @@ export default function GrainOverlay() {
 
   return (
     <>
-      {/* Grain */}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
@@ -55,7 +49,6 @@ export default function GrainOverlay() {
           mixBlendMode: "overlay",
         }}
       />
-      {/* Scanlines — 1 px line every 4 px, very subtle */}
       <div
         aria-hidden="true"
         style={{

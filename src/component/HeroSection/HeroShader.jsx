@@ -2,14 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/store/ThemeContext";
 
-// Cinematic color-grade background shader.
-// Simulates the look of a color-grading monitor:
-//   • warm amber corner (shadows lift) — bottom-left
-//   • cool blue corner (highlight push) — top-right
-//   • subtle center brightening (key light)
-//   • tiny cyan brand accent — top-right edge
-// All zones breathe slowly with opposite phase so it feels alive.
-
 const VERT = `
 attribute vec2 a_pos;
 void main() {
@@ -39,13 +31,11 @@ void main() {
   float vignette = 1.0 - dot(c, c) * 1.6;
   vignette = smoothstep(0.0, 1.0, vignette);
 
-  // Light palette
   vec3 baseL = vec3(0.961, 0.957, 0.949);
   vec3 warmL = vec3(1.0,   0.940, 0.875);
   vec3 coolL = vec3(0.875, 0.925, 1.0  );
   vec3 vigL  = vec3(1.0,   0.992, 0.984);
 
-  // Dark palette
   vec3 baseD = vec3(0.047, 0.047, 0.047);
   vec3 warmD = vec3(0.12,  0.07,  0.02 );
   vec3 coolD = vec3(0.02,  0.05,  0.14 );
@@ -84,25 +74,13 @@ export default function HeroShader() {
   const darkRef = useRef(theme === "dark" ? 1 : 0);
   const [ready, setReady] = useState(false);
 
-  // Defer WebGL init until after first paint so it doesn't block LCP
   useEffect(() => {
-    const ric =
-      typeof window !== "undefined" && window.requestIdleCallback
-        ? window.requestIdleCallback
-        : null;
-    const cic =
-      typeof window !== "undefined" && window.cancelIdleCallback
-        ? window.cancelIdleCallback
-        : null;
-
+    const ric = window.requestIdleCallback;
+    const cic = window.cancelIdleCallback;
     const id = ric
       ? ric(() => setReady(true), { timeout: 300 })
       : setTimeout(() => setReady(true), 100);
-
-    return () => {
-      if (ric && cic) cic(id);
-      else clearTimeout(id);
-    };
+    return () => (ric && cic ? cic(id) : clearTimeout(id));
   }, []);
 
   useEffect(() => {
@@ -162,7 +140,6 @@ export default function HeroShader() {
     let raf;
     const t0 = performance.now();
     const render = () => {
-      // Smooth lerp toward target so theme transition is gradual
       blended += (darkRef.current - blended) * 0.06;
       gl.uniform1f(uTime, (performance.now() - t0) * 0.001);
       gl.uniform2f(uRes, canvas.width, canvas.height);

@@ -23,7 +23,6 @@ const HeroSection = () => {
           Hetauda, Nepal &nbsp;·&nbsp; Est. 2016
         </motion.p>
 
-        {/* h1 is the LCP element — render visible immediately, no opacity:0 */}
         <h1 className="font-[family-name:var(--font-sora)] text-5xl md:text-7xl font-bold text-(--fg) leading-[1.05] mb-8">
           We create
           <br />

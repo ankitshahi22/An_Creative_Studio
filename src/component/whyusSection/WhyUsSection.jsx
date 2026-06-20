@@ -1,13 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-
-const scrollFadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
-});
+import { scrollFadeUp } from "@/utils/animations";
 
 const stats = [
   { end: 8, suffix: "+", label: "Years of work" },
@@ -25,7 +19,6 @@ function useCountUp(end, duration = 1800, triggered) {
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      // ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * end));
       if (progress < 1) requestAnimationFrame(step);

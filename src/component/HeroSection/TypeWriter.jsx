@@ -9,7 +9,7 @@ const TypeWriter = () => {
     text: words[0],
     i: 0,
     del: false,
-    paused: true, // start paused so first word is visible before cycling
+    paused: true,
   });
 
   const t = useRef(null);

@@ -32,7 +32,6 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {linksData.map((item) => (
             <Link
@@ -63,7 +62,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-1">
           <div className="ml-2 pl-2 pr-2 border-l border-[#dddddd] dark:border-[#888]">
             <button
@@ -84,7 +82,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
       {isOpen && (
         <nav className="md:hidden border-t border-(--border-color) bg-(--bg-card) px-5 py-4 flex flex-col gap-1">
           {linksData.map((item) => (

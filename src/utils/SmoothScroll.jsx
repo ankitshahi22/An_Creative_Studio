@@ -9,7 +9,6 @@ export default function SmoothScroll({ children }) {
 
   useEffect(() => {
     const instance = new Lenis();
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
 
     let rafId;

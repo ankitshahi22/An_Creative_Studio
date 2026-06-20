@@ -33,7 +33,6 @@ const projects = [
 export default function WorkSection() {
   return (
     <section className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-4">
-      {/* Chromatic aberration — RGB channel split, very video-editor */}
       <svg
         aria-hidden="true"
         style={{
@@ -52,7 +51,6 @@ export default function WorkSection() {
             height="100%"
             colorInterpolationFilters="sRGB"
           >
-            {/* Red channel — shift right */}
             <feColorMatrix
               type="matrix"
               values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
@@ -60,14 +58,12 @@ export default function WorkSection() {
               result="r"
             />
             <feOffset in="r" dx="4" dy="0" result="rShift" />
-            {/* Green channel — no shift */}
             <feColorMatrix
               type="matrix"
               values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"
               in="SourceGraphic"
               result="g"
             />
-            {/* Blue channel — shift left */}
             <feColorMatrix
               type="matrix"
               values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"
@@ -75,10 +71,8 @@ export default function WorkSection() {
               result="b"
             />
             <feOffset in="b" dx="-4" dy="0" result="bShift" />
-            {/* Recombine with screen blend */}
             <feBlend in="rShift" in2="g" mode="screen" result="rg" />
             <feBlend in="rg" in2="bShift" mode="screen" result="rgb" />
-            {/* Clip back to original bounds — prevents edge fringing */}
             <feComposite in="rgb" in2="SourceGraphic" operator="in" />
           </filter>
         </defs>
@@ -101,7 +95,6 @@ const ProjectLink = ({ heading, imgSrc, subheading, href }) => {
   const [canHover, setCanHover] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCanHover(
       window.matchMedia("(hover: hover) and (pointer: fine)").matches,
     );
